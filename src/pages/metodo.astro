@@ -1,0 +1,305 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/layout/Footer.astro';
+
+const pilares = [
+  {
+    numero: '01',
+    titulo: 'Dirección y Norte Estratégico',
+    descripcion: `Muchas organizaciones tienen visión, pero no tienen dirección operativa. La visión dice hacia dónde ir; la dirección dice cómo orientar las decisiones cotidianas para llegar ahí.
+
+En esta capa del Método trabajamos en sincronizar el pensamiento del liderazgo con la realidad del equipo. Definimos criterios rectores: aquellas reglas de decisión que, cuando están claras, permiten que cada persona en la organización pueda actuar con autonomía y alineación al mismo tiempo.
+
+El resultado es un norte compartido que no vive solo en la cabeza del dueño, sino que circula en la organización y orienta el trabajo de todos.`,
+    items: [
+      'Definición de criterios rectores y prioridades reales',
+      'Sincronización entre visión del liderazgo y operación',
+      'Prioridades que el equipo puede usar sin consultar en cada paso',
+    ],
+  },
+  {
+    numero: '02',
+    titulo: 'Traducción Organizacional',
+    descripcion: `El norte estratégico necesita traducirse en herramientas concretas que el equipo pueda usar. No documentos que cumplan un requisito formal, sino procesos, instructivos y formularios que se usan de verdad porque son entendibles, prácticos y útiles.
+
+En esta capa diseñamos la arquitectura operativa de la organización: quién hace qué, cómo se documenta, qué se registra y qué no. El criterio siempre es el mismo: si no lo van a usar, no lo diseñamos.
+
+La traducción organizacional es la diferencia entre tener un organigrama bonito y tener una estructura que funciona.`,
+    items: [
+      'Diseño de procesos usables, no documentos formales',
+      'Instructivos y formularios que el equipo adopta de forma natural',
+      'Definición clara de roles, responsabilidades y flujos de trabajo',
+    ],
+  },
+  {
+    numero: '03',
+    titulo: 'Confianza y Liderazgo',
+    descripcion: `El liderazgo que controla todo no puede escalar. La organización queda atrapada en la capacidad de atención de una persona: el dueño, el gerente, o el líder de cada área.
+
+En esta capa trabajamos la transición del control vertical hacia la confianza operativa. No se trata de soltar sin preparar, sino de construir las condiciones para que el equipo pueda actuar con autonomía real.
+
+Los líderes dejan de vigilar para empezar a guiar. Y el equipo deja de esperar instrucciones para empezar a tomar iniciativa dentro de un marco claro.`,
+    items: [
+      'Desarrollo de autonomía con alineación en el equipo',
+      'Transición del liderazgo operativo al liderazgo estratégico',
+      'Creación de espacios de claridad y participación real',
+    ],
+  },
+  {
+    numero: '04',
+    titulo: 'Comunicación y Coordinación',
+    descripcion: `Creamos rituales de gestión que ordenan la ejecución cotidiana y eliminan fricción.\n\nDiseñamos rutinas concretas de coordinación —reuniones diarias, semanales, seguimientos y mensajes— con responsables claros y compromisos visibles, para evitar el desgaste, el burnout y la falta de seguimiento.`,
+    items: [
+      'Rituales de coordinación simples y con propósito claro',
+      'Sistema de registro de compromisos y seguimiento de avance',
+      'Comunicación que reduce escalamientos y urgencias evitables',
+    ],
+  },
+];
+
+const diferenciales = [
+  {
+    titulo: 'No documentamos por cumplir: ordenamos para que funcione',
+    descripcion:
+      'Cada herramienta que diseñamos pasa por un filtro simple: ¿el equipo la va a usar? Si la respuesta es no, no la diseñamos. Priorizamos la adopción sobre la formalidad.',
+  },
+  {
+    titulo: 'Integración total: no separamos estrategia, operación y liderazgo',
+    descripcion:
+      'Los cuatro pilares del Método trabajan juntos. No tiene sentido definir un norte estratégico si la estructura operativa no puede soportarlo, ni construir confianza si la comunicación sigue siendo caótica.',
+  },
+  {
+    titulo: 'Sistemas usables: entendibles, vivos, no para cumplir formalidades',
+    descripcion:
+      'Un sistema que nadie entiende o que queda obsoleto en tres meses no es un sistema: es un gasto de energía. Diseñamos para la realidad del equipo, no para el manual.',
+  },
+];
+---
+
+<Layout
+  title="El Método Nogolí — Consultoría Operacional"
+  description="Una forma de trabajo usable, conectada y viva, diseñada para que tu operación no dependa siempre de vos. Conocé los 4 pilares del Método Nogolí."
+  ogImage="/og-image.jpg"
+>
+  <!-- Simple navbar for internal page -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-md border-b border-line overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center">
+        <img
+          src="/imagenes/logo/nuevologonog.svg"
+          alt="Nogolí Consulting"
+          class="w-10 h-10 object-contain shrink-0"
+          style="max-width: 40px; max-height: 40px;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+        />
+        <span class="font-serif text-espresso hidden" style="font-size: 20px; font-weight: 700; letter-spacing: 0.03em;">Nogolí Consulting</span>
+      </a>
+      <a
+        href="/"
+        class="font-sans text-sm font-light hover:text-accent transition-colors flex items-center gap-2" style="color: var(--dark-mid);"
+      >
+        ← Volver al inicio
+      </a>
+    </div>
+  </header>
+
+  <!-- Progress bar -->
+  <div id="scroll-progress"></div>
+
+  <main id="main-content" class="pt-20">
+    <!-- Hero -->
+    <section class="bg-cream py-28 md:py-40">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <div class="reveal eyebrow mb-6">Nuestra filosofía de ejecución</div>
+          <h1 class="reveal reveal-delay-1 font-serif text-espresso mb-8" style="font-size: clamp(48px, 7vw, 84px); line-height: 1.05; letter-spacing: -0.02em; font-weight: 900;">
+            El Método Nogolí.
+          </h1>
+          <p class="reveal reveal-delay-2 font-sans text-base md:text-xl font-light leading-loose max-w-2xl" style="color: var(--dark-mid);">
+            Una forma de trabajo usable, conectada y viva, diseñada para que tu
+            operación no dependa siempre de vos. Cuatro pilares que actúan juntos
+            para transformar el desorden en capacidad real de entrega.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Principio rector -->
+    <section class="bg-cream-mid py-20">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 flex justify-center">
+        <blockquote class="reveal max-w-2xl border-l-2 border-accent pl-10 py-4">
+          <p class="font-serif text-3xl md:text-4xl font-semibold italic leading-relaxed" style="color: var(--dark-mid);">
+            “La confianza precede al rendimiento.”
+          </p>
+          <footer class="mt-5 font-sans text-xs font-medium tracking-[0.2em] uppercase" style="color: var(--accent);">
+            — Principio rector del Método Nogolí
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Flow diagram -->
+    <section class="bg-cream py-16">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <!-- Mobile badges (wrap) -->
+        <div class="reveal flex sm:hidden flex-wrap justify-center gap-2">
+          {['DIRECCIÓN', 'PROCESOS', 'RESPONSABILIDADES', 'COORDINACIÓN', 'EJECUCIÓN'].map((step, i) => (
+            <div class="flex items-center gap-2 px-3 py-2 bg-cream-mid" style="border: 1px solid rgba(211,153,69,0.40);">
+              <span class="font-sans text-[9px] font-bold tracking-widest uppercase" style="color: var(--accent);">{String(i + 1).padStart(2,'0')}</span>
+              <span class="font-serif font-semibold text-espresso text-xs">{step}</span>
+            </div>
+          ))}
+        </div>
+        <!-- Desktop row with arrows -->
+        <div class="reveal hidden sm:flex flex-row items-center justify-center gap-0 max-w-3xl mx-auto">
+          {['DIRECCIÓN', 'PROCESOS', 'RESPONSABILIDADES', 'COORDINACIÓN', 'EJECUCIÓN'].map((step, i) => (
+            <div class="flex flex-row items-center">
+              <div class="flex flex-col items-center gap-2 px-6 py-5 min-w-32 text-center bg-cream-mid" style="border: 1px solid rgba(211,153,69,0.40);">
+                <span class="font-serif text-espresso font-semibold" style="font-size: 16px; letter-spacing: 0.02em;">{step}</span>
+              </div>
+              {i < 4 && (
+                <svg width="32" height="2" viewBox="0 0 32 2">
+                  <line x1="0" y1="1" x2="28" y2="1" stroke="var(--accent)" stroke-width="1.5"/>
+                  <polyline points="22,0 28,1 22,2" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+                </svg>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 Pillars detail -->
+    {pilares.map((pilar, idx) => (
+      <section class={`py-24 md:py-32 ${idx % 2 === 0 ? 'bg-cream-mid' : 'bg-cream'}`}>
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div class="reveal">
+              <div class="flex items-center gap-4 mb-6">
+                <span class="font-sans text-xs font-medium tracking-widest uppercase text-accent">{pilar.numero}</span>
+                <div class="w-8 h-px bg-accent/50"></div>
+              </div>
+              <h2 class="font-serif text-espresso mb-6" style="font-size: clamp(32px, 4vw, 52px); line-height: 1.2; letter-spacing: -0.01em;">
+                {pilar.titulo}
+              </h2>
+              {pilar.descripcion.split('\n\n').map((para) => (
+                <p class="font-sans text-base font-light leading-loose mb-4" style="color: var(--dark-mid);">
+                  {para}
+                </p>
+              ))}
+            </div>
+            <div class="reveal reveal-delay-1 flex flex-col gap-4 pt-2 lg:pt-16">
+              {pilar.items.map((item) => (
+                <div class="flex items-start gap-4 p-5 bg-cream hover:bg-warm-white transition-colors duration-300" style="border: 1px solid rgba(211,153,69,0.22);">
+                  <span class="mt-1 w-2 h-2 rounded-full bg-accent shrink-0"></span>
+                  <span class="font-sans text-sm font-light text-espresso leading-snug">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <!-- Cómo opera el Método -->
+    <section class="bg-cream py-28 md:py-40">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="eyebrow mb-6 reveal">Cómo trabajamos</div>
+        <h2 class="font-serif text-espresso mb-16 reveal reveal-delay-1" style="font-size: clamp(36px, 5vw, 52px); line-height: 1.2;">
+          Cómo opera el Método Nogolí.
+        </h2>
+        <div class="flex flex-col gap-0">
+          {[
+            {
+              paso: '0',
+              titulo: 'Diagnóstico',
+              descripcion: 'Mapeamos cómo se usa hoy el tiempo de la dirección y dónde está la fricción operativa: organigrama, procedimientos vigentes, rutinas de reuniones y problemas que expresan los líderes.',
+            },
+            {
+              paso: '1',
+              titulo: 'Norte estratégico',
+              descripcion: 'Definimos con la dirección qué tiempo se libera para lo estratégico, qué actividades quedan, cuáles se delegan con reglas y cuáles se delegan de inmediato.',
+            },
+            {
+              paso: '2',
+              titulo: 'Bajar la dirección a la operación',
+              descripcion: 'Diseñamos los rituales base —reuniones diarias por Kanban y reuniones semanales tácticas— y, a partir de ellos, los procesos, procedimientos, instructivos y formularios alineados con la misión.',
+            },
+            {
+              paso: '3',
+              titulo: 'Construir confianza en la forma de trabajo',
+              descripcion: 'Involucramos a líderes y equipos en la construcción del sistema, usando esas instancias como espacios de participación, alerta, aprendizaje y propuesta.',
+            },
+            {
+              paso: '4',
+              titulo: 'Sostener el sistema con comunicación clara',
+              descripcion: 'Ordenamos reuniones, correos y seguimientos para que la coordinación diaria mantenga el sistema vivo en lugar de degradarlo.',
+            },
+          ].map((s, i) => (
+            <div class={`reveal reveal-delay-${i + 1} flex flex-col md:flex-row gap-6 md:gap-12 py-10 md:py-12`} style="border-top: 1px solid rgba(211,153,69,0.22);">
+              <div class="shrink-0 w-12">
+                <span class="font-serif font-bold leading-none" style={`font-size: 48px; color: var(--accent); opacity: 0.9;`}>{s.paso}</span>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h3 class="font-serif text-espresso font-semibold" style="font-size: clamp(20px, 2.5vw, 28px); line-height: 1.2;">{s.titulo}</h3>
+                <p class="font-sans text-base font-light leading-loose max-w-2xl" style="color: var(--dark-mid);">{s.descripcion}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Diferenciales -->
+    <section class="bg-cream-mid py-28 md:py-40">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="flex flex-col gap-5 mb-14">
+          <div class="reveal eyebrow">Por qué es diferente</div>
+          <h2 class="reveal reveal-delay-1 font-serif text-espresso max-w-2xl" style="font-size: clamp(32px, 4vw, 52px); line-height: 1.2; letter-spacing: -0.01em;">
+            No es consultoría tradicional.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-line">
+          {diferenciales.map((d, i) => (
+            <div class={`reveal reveal-delay-${i + 1} bg-cream hover:bg-warm-white transition-colors duration-300 p-8 lg:p-10 flex flex-col gap-4`}>
+              <div class="w-8 h-px bg-accent mb-2"></div>
+              <h3 class="font-serif text-xl font-bold text-espresso">{d.titulo}</h3>
+              <p class="font-sans text-sm font-light leading-loose" style="color: var(--dark-mid);">{d.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final (dark accent closing) -->
+    <section class="bg-espresso py-28 md:py-40 border-t border-line">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center gap-8">
+        <div class="reveal eyebrow justify-center">El siguiente paso</div>
+        <h2 class="reveal reveal-delay-1 font-serif text-text max-w-2xl" style="font-size: clamp(32px, 4vw, 52px); line-height: 1.2; letter-spacing: -0.01em;">
+          Hablemos sobre tu empresa.
+        </h2>
+        <p class="reveal reveal-delay-2 font-sans text-base font-light text-muted max-w-xl leading-loose">
+          Te propongo una charla corta. Revisamos tu situación y te digo si el
+          Método Nogolí aplica y por dónde empezar.
+        </p>
+        <div class="reveal reveal-delay-3 flex flex-wrap gap-4 justify-center">
+          <a
+            href="/#contacto"
+            class="btn-shimmer inline-flex items-center gap-2 px-8 py-4 bg-accent text-bg font-sans text-sm font-medium tracking-wide hover:bg-accent2 transition-colors duration-500"
+          >
+            Hablemos
+          </a>
+          <a
+            href="/"
+            class="inline-flex items-center gap-2 px-8 py-4 font-sans text-sm font-light tracking-wide text-muted border border-line hover:border-accent hover:text-text transition-all duration-500"
+          >
+            ← Volver al inicio
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

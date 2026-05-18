@@ -1,0 +1,715 @@
+﻿---
+---
+
+
+<section id="metodo" class="bg-cream py-28 md:py-40">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="mb-16 flex flex-col gap-5">
+      <div class="flex flex-col gap-3">
+        <h2 class="reveal font-serif text-espresso max-w-3xl" style="font-size: clamp(36px, 5vw, 52px); line-height: 1.2; letter-spacing: -0.01em;">
+          El Método Nogolí
+        </h2>
+        <p class="reveal reveal-delay-1 font-sans text-base md:text-lg font-semibold leading-snug max-w-2xl" style="color: var(--espresso);">
+          Entrenamos a tu empresa para que evolucione
+        </p>
+      </div>
+      <p class="reveal reveal-delay-2 font-sans text-base md:text-lg font-normal md:font-light max-w-2xl leading-loose" style="color: var(--dark-mid);">
+        <strong>La confianza precede al rendimiento.</strong> El Método Nogolí construye un puente de doble vía: por un lado, la dirección se apoya en el sistema que el equipo diseñó porque las decisiones se tomen donde corresponde y a tiempo; por otro, el equipo trabaja con más seguridad porque esa forma de trabajar es suya y le funciona en el día a día.
+      </p>
+    </div>
+
+    <!-- â•â•â• DESKTOP: Phase flow â•â•â• -->
+    <div class="reveal mt-20 mb-12 pt-16" style="border-top: 1px solid rgba(211,153,69,0.2);">
+      <h3 class="font-serif text-espresso mb-3" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.2; letter-spacing: -0.01em;">
+        Cómo trabajamos
+      </h3>
+      <p class="font-sans text-base font-semibold leading-snug mb-4 max-w-xl" style="color: var(--espresso);">
+        Un recorrido con un inicio y final claros
+      </p>
+      <p class="font-sans text-base font-light leading-loose max-w-2xl" style="color: var(--dark-mid);">
+        El Método Nogolí se implementa a través de cuatro etapas que se conectan entre sí y se apoyan en cuatro pilares de trabajo. No llegamos con un modelo cerrado, empezamos entendiendo cómo trabaja hoy tu empresa, adaptamos el método y los servicios que ofrecemos a esa realidad, lo instalamos junto al equipo y luego acompañamos para que se sostenga en el tiempo.
+      </p>
+    </div>
+
+    <div class="hidden lg:block reveal mb-4">
+      <!-- ═══ "El proceso" collapsible box ═══ -->
+      <div style="border:1px solid rgba(211,153,69,0.2);border-radius:4px;overflow:hidden;">
+        <button onclick="toggleProceso()" class="proceso-header w-full flex flex-col items-center justify-center gap-1 px-6 py-4 cursor-pointer" style="background:var(--cream-mid);border:none;">
+          <span class="font-serif font-bold" style="font-size:1.65rem;letter-spacing:-0.01em;color:var(--accent);">El proceso</span>
+          <span class="proceso-arrow font-sans text-xl leading-none" style="color:var(--accent);transition:transform 0.25s;">▾</span>
+        </button>
+        <div id="proceso-content" style="max-height:0;overflow:hidden;transition:max-height 0.45s ease;">
+          <div class="px-6 pb-6 pt-2">
+      <div class="phase-flow relative flex items-start justify-center gap-0">
+        <!-- horizontal line behind circles -->
+        <div class="absolute" style="top:26px;left:0;right:0;height:1px;background:var(--accent);opacity:0.2;pointer-events:none;"></div>
+
+        <!-- Phase 01 -->
+        <div class="phase-node flex flex-col items-center gap-2 cursor-pointer flex-1 px-3" data-fase="fase-1" onclick="toggleFase('fase-1')">
+          <div class="phase-circle flex items-center justify-center" style="width:52px;height:52px;border-radius:50%;background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);transition:all 0.2s;position:relative;z-index:1;">
+            <span class="phase-num font-serif font-bold text-sm" style="color:var(--accent);">01</span>
+          </div>
+          <span class="font-serif font-bold text-espresso text-xs text-center">Diagnóstico</span>
+          <span class="font-sans text-[10px] text-center leading-snug" style="color:var(--dark-mid);max-width:90px;">Entendemos la realidad operativa actual</span>
+          <span class="phase-hint font-sans text-[9px]" style="color:var(--accent);">ver detalle ↓</span>
+        </div>
+        <div class="shrink-0 pt-4 font-sans text-base" style="color:var(--accent);opacity:0.5;">→</div>
+
+        <!-- Phase 02 -->
+        <div class="phase-node flex flex-col items-center gap-2 cursor-pointer flex-1 px-3" data-fase="fase-2" onclick="toggleFase('fase-2')">
+          <div class="phase-circle flex items-center justify-center" style="width:52px;height:52px;border-radius:50%;background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);transition:all 0.2s;position:relative;z-index:1;">
+            <span class="phase-num font-serif font-bold text-sm" style="color:var(--accent);">02</span>
+          </div>
+          <span class="font-serif font-bold text-espresso text-xs text-center">Adaptación</span>
+          <span class="font-sans text-[10px] text-center leading-snug" style="color:var(--dark-mid);max-width:90px;">Diseñamos el sistema para tu empresa</span>
+          <span class="phase-hint font-sans text-[9px]" style="color:var(--accent);">ver detalle ↓</span>
+        </div>
+        <div class="shrink-0 pt-4 font-sans text-base" style="color:var(--accent);opacity:0.5;">→</div>
+
+        <!-- Phase 03 -->
+        <div class="phase-node flex flex-col items-center gap-2 cursor-pointer flex-1 px-3" data-fase="fase-3" onclick="toggleFase('fase-3')">
+          <div class="phase-circle flex items-center justify-center" style="width:52px;height:52px;border-radius:50%;background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);transition:all 0.2s;position:relative;z-index:1;">
+            <span class="phase-num font-serif font-bold text-sm" style="color:var(--accent);">03</span>
+          </div>
+          <span class="font-serif font-bold text-espresso text-xs text-center">Implementación</span>
+          <span class="font-sans text-[10px] text-center leading-snug" style="color:var(--dark-mid);max-width:90px;">Instalamos con el equipo, no para el equipo</span>
+          <span class="phase-hint font-sans text-[9px]" style="color:var(--accent);">ver detalle ↓</span>
+        </div>
+        <div class="shrink-0 pt-4 font-sans text-base" style="color:var(--accent);opacity:0.5;">→</div>
+
+        <!-- Phase 04 -->
+        <div class="phase-node flex flex-col items-center gap-2 cursor-pointer flex-1 px-3" data-fase="fase-4" onclick="toggleFase('fase-4')">
+          <div class="phase-circle flex items-center justify-center" style="width:52px;height:52px;border-radius:50%;background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);transition:all 0.2s;position:relative;z-index:1;">
+            <span class="phase-num font-serif font-bold text-sm" style="color:var(--accent);">04</span>
+          </div>
+          <span class="font-serif font-bold text-espresso text-xs text-center">Seguimiento</span>
+          <span class="font-sans text-[10px] text-center leading-snug" style="color:var(--dark-mid);max-width:90px;">Para que el sistema se sostenga</span>
+          <span class="phase-hint font-sans text-[9px]" style="color:var(--accent);">ver detalle ↓</span>
+        </div>
+      </div>
+
+      <!-- Phase detail panels -->
+      <div id="fase-1" class="fase-panel overflow-hidden" style="max-height:0;transition:max-height 0.3s ease;">
+        <div class="mt-4 p-6 rounded-sm" style="background:var(--bg2);border-left:3px solid var(--accent);">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <span class="font-sans text-[9px] tracking-widest uppercase block mb-1" style="color:var(--accent);">Etapa 01</span>
+              <h3 class="font-serif font-bold text-xl" style="color:var(--cream);">Diagnóstico</h3>
+            </div>
+            <button onclick="toggleFase('fase-1')" class="font-sans text-[10px] px-2 py-1 cursor-pointer shrink-0" style="border:1px solid var(--accent);color:var(--accent);background:transparent;">✕ cerrar</button>
+          </div>
+          <p class="font-sans text-sm italic leading-loose mb-3" style="color:rgba(250,243,228,0.6);">Entendemos cómo funciona hoy tu empresa y dónde se está yendo el tiempo de la dirección.</p>
+          <p class="font-sans text-sm leading-loose mb-2" style="color:rgba(250,243,228,0.8);">En el Diagnóstico miramos la empresa como un todo: cómo se organiza el trabajo, cómo usa su tiempo la dirección y cómo se lo está viviendo en el día a día. Mapeamos la agenda directiva, los procesos y reuniones clave, y las fricciones que el equipo percibe en su trabajo cotidiano.</p>
+          <p class="font-sans text-sm leading-loose mb-4" style="color:rgba(250,243,228,0.8);">La lógica es simple: ningún proceso funciona aislado de las personas que lo llevan adelante. Por eso, además de revisar qué se hace y cómo se hace, escuchamos cómo se siente trabajar así hoy: qué desgasta, qué ayuda y qué señales de alerta ya están apareciendo. Con esa foto completa podemos decidir qué cambiar primero y hasta dónde avanzar en la implementación.</p>
+          <span class="font-sans text-[9px] tracking-widest uppercase block mb-2" style="color:rgba(250,243,228,0.5);">Herramientas</span>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Mapeo del tiempo directivo</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Relevamiento de procesos y reuniones</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Lectura de fricciones del equipo</span>
+          </div>
+          <div class="flex items-center justify-end gap-3 mt-5 pt-4" style="border-top:1px solid rgba(211,153,69,0.15);">
+            <div class="text-right">
+              <p class="font-serif font-bold text-[11px]" style="color:var(--cream);">Sergio Martín Celuch</p>
+              <p class="font-sans text-[9px] tracking-widest uppercase mt-0.5" style="color:var(--accent);">Creador del método Nogolí</p>
+            </div>
+            <img src="/imagenes/perfil/sergio6.jpg" alt="Sergio Celuch" style="width:40px;height:40px;object-fit:cover;object-position:top;border-radius:50%;border:1px solid rgba(211,153,69,0.3);" />
+          </div>
+        </div>
+      </div>
+
+      <div id="fase-2" class="fase-panel overflow-hidden" style="max-height:0;transition:max-height 0.3s ease;">
+        <div class="mt-4 p-6 rounded-sm" style="background:var(--bg2);border-left:3px solid var(--accent);">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <span class="font-sans text-[9px] tracking-widest uppercase block mb-1" style="color:var(--accent);">Etapa 02</span>
+              <h3 class="font-serif font-bold text-xl" style="color:var(--cream);">Adaptación</h3>
+            </div>
+            <button onclick="toggleFase('fase-2')" class="font-sans text-[10px] px-2 py-1 cursor-pointer shrink-0" style="border:1px solid var(--accent);color:var(--accent);background:transparent;">✕ cerrar</button>
+          </div>
+          <p class="font-sans text-sm italic leading-loose mb-3" style="color:rgba(250,243,228,0.6);">Ajustamos el método a la realidad y al momento de tu empresa.</p>
+          <p class="font-sans text-sm leading-loose mb-4" style="color:rgba(250,243,228,0.8);">En la etapa de Adaptación traducimos lo que vimos en el diagnóstico en un plan concreto para tu empresa. Trabajamos con la dirección para definir cuánto tiempo liberar, qué actividades se queda la dirección, qué se delega y con qué reglas, y en qué procesos y áreas tiene más sentido intervenir primero. Con esa base, elegimos qué herramientas del método activar en esta etapa: qué procesos vale la pena documentar, qué rituales de gestión instalar y qué apoyos adicionales son necesarios. El resultado es un mapa de implementación claro, alineado con la capacidad real del equipo y con el momento de la empresa.</p>
+          <span class="font-sans text-[9px] tracking-widest uppercase block mb-2" style="color:rgba(250,243,228,0.5);">Herramientas</span>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Definición de objetivos y tiempos a liberar</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Priorización de procesos y rituales</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Diseño del plan de implementación</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Reuniones diarias y semanales de gestión</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Espacios de seguimiento y revisión</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Automatización de tareas clave</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Coaching individual o de equipo</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Psico para sociedades de pareja</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Psico para sociedades familiares</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Dinámicas de grupo</span>
+          </div>
+          <div class="flex items-center justify-end gap-3 mt-5 pt-4" style="border-top:1px solid rgba(211,153,69,0.15);">
+            <div class="text-right">
+              <p class="font-serif font-bold text-[11px]" style="color:var(--cream);">Sergio Martín Celuch</p>
+              <p class="font-sans text-[9px] tracking-widest uppercase mt-0.5" style="color:var(--accent);">Creador del método Nogolí</p>
+            </div>
+            <img src="/imagenes/perfil/sergio6.jpg" alt="Sergio Celuch" style="width:40px;height:40px;object-fit:cover;object-position:top;border-radius:50%;border:1px solid rgba(211,153,69,0.3);" />
+          </div>
+        </div>
+      </div>
+
+      <div id="fase-3" class="fase-panel overflow-hidden" style="max-height:0;transition:max-height 0.3s ease;">
+        <div class="mt-4 p-6 rounded-sm" style="background:var(--bg2);border-left:3px solid var(--accent);">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <span class="font-sans text-[9px] tracking-widest uppercase block mb-1" style="color:var(--accent);">Etapa 03</span>
+              <h3 class="font-serif font-bold text-xl" style="color:var(--cream);">Implementación</h3>
+            </div>
+            <button onclick="toggleFase('fase-3')" class="font-sans text-[10px] px-2 py-1 cursor-pointer shrink-0" style="border:1px solid var(--accent);color:var(--accent);background:transparent;">✕ cerrar</button>
+          </div>
+          <p class="font-sans text-sm italic leading-loose mb-3" style="color:rgba(250,243,228,0.6);">Entrenamos a tu equipo para que tu empresa evolucione.</p>
+          <p class="font-sans text-sm leading-loose mb-3" style="color:rgba(250,243,228,0.8);">En la etapa de Implementación trabajamos con tu equipo para liberar tiempo de la dirección llevando el método que adaptamos, a la práctica diaria. Les enseñamos a definir, acordar y documentar cómo se trabaja, acuerdos entre áreas y rituales de gestión que ordenan el día a día sin sumar burocracia.</p>
+          <p class="font-sans text-sm leading-loose mb-1" style="color:rgba(250,243,228,0.8);">La implementación se apoya en dos momentos:</p>
+          <ul class="font-sans text-sm leading-loose mb-4 space-y-2" style="color:rgba(250,243,228,0.8);">
+            <li class="flex gap-2"><span style="color:var(--accent);flex-shrink:0;">•</span><span><strong>Un sprint organizacional de 8–12 semanas</strong> para instalar los primeros procesos que permiten delegar con reglas claras.</span></li>
+            <li class="flex gap-2"><span style="color:var(--accent);flex-shrink:0;">•</span><span><strong>Entrenamiento avanzado de 16–20 semanas</strong> para entrar en los procesos troncales y consolidar el sistema en toda la organización.</span></li>
+            <li class="flex gap-2"><span style="color:var(--accent);flex-shrink:0;">•</span><span><strong>Un sistema ISO 9001 Vivo</strong>, donde integramos todo en el estándar más difundido de gestión, dejando a la empresa lista para certificarse si lo requiere o desea. Es acá donde ponemos el clavo de oro al método: diseñamos auditorías livianas de gestión, donde el propio sistema se auto-controla y se auto-refuerza a través de auditorías internas apoyadas en tableros de implementación.</span></li>
+          </ul>
+          <span class="font-sans text-[9px] tracking-widest uppercase block mb-2" style="color:rgba(250,243,228,0.5);">Herramientas</span>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Diseño de procesos</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Redacción de procedimientos</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Comunicación Efectiva</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Instructivos de trabajo</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Formularios y registros</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Reuniones diarias</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Reuniones semanales</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Tablero Kanban</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Seguimiento de compromisos</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Sprint Organizacional</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Consolidación</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">ISO 9001 Vivo</span>
+          </div>
+          <div class="flex items-center justify-end gap-3 mt-5 pt-4" style="border-top:1px solid rgba(211,153,69,0.15);">
+            <div class="text-right">
+              <p class="font-serif font-bold text-[11px]" style="color:var(--cream);">Sergio Martín Celuch</p>
+              <p class="font-sans text-[9px] tracking-widest uppercase mt-0.5" style="color:var(--accent);">Creador del método Nogolí</p>
+            </div>
+            <img src="/imagenes/perfil/sergio6.jpg" alt="Sergio Celuch" style="width:40px;height:40px;object-fit:cover;object-position:top;border-radius:50%;border:1px solid rgba(211,153,69,0.3);" />
+          </div>
+        </div>
+      </div>
+
+      <div id="fase-4" class="fase-panel overflow-hidden" style="max-height:0;transition:max-height 0.3s ease;">
+        <div class="mt-4 p-6 rounded-sm" style="background:var(--bg2);border-left:3px solid var(--accent);">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <span class="font-sans text-[9px] tracking-widest uppercase block mb-1" style="color:var(--accent);">Etapa 04</span>
+              <h3 class="font-serif font-bold text-xl" style="color:var(--cream);">Seguimiento</h3>
+            </div>
+            <button onclick="toggleFase('fase-4')" class="font-sans text-[10px] px-2 py-1 cursor-pointer shrink-0" style="border:1px solid var(--accent);color:var(--accent);background:transparent;">✕ cerrar</button>
+          </div>
+          <p class="font-sans text-sm italic leading-loose mb-3" style="color:rgba(250,243,228,0.6);">Entrenamiento estratégico.</p>
+          <p class="font-sans text-sm leading-loose mb-4" style="color:rgba(250,243,228,0.8);">En la etapa de Seguimiento hacemos un trabajo específico con la dirección para que use el tiempo liberado en pensar el negocio, el futuro de la empresa y las decisiones de largo plazo. Trabajamos como entrenador ayudando a traducir ese pensamiento estratégico en la nueva realidad de la empresa.</p>
+          <span class="font-sans text-[9px] tracking-widest uppercase block mb-2" style="color:rgba(250,243,228,0.5);">Herramientas</span>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Coaching de liderazgo estratégico</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Talleres de comunicación de la visión con el equipo</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Mapa de Círculo Dorado de la empresa</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Fichas de decisión estratégica</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Agenda estratégica semanal para el director</span>
+          </div>
+          <div class="flex items-center justify-end gap-3 mt-5 pt-4" style="border-top:1px solid rgba(211,153,69,0.15);">
+            <div class="text-right">
+              <p class="font-serif font-bold text-[11px]" style="color:var(--cream);">Sergio Martín Celuch</p>
+              <p class="font-sans text-[9px] tracking-widest uppercase mt-0.5" style="color:var(--accent);">Creador del método Nogolí</p>
+            </div>
+            <img src="/imagenes/perfil/sergio6.jpg" alt="Sergio Celuch" style="width:40px;height:40px;object-fit:cover;object-position:top;border-radius:50%;border:1px solid rgba(211,153,69,0.3);" />
+          </div>
+        </div>
+      </div>
+
+          </div><!-- inner padding wrapper -->
+        </div><!-- proceso-content -->
+      </div><!-- proceso box -->
+    </div><!-- end desktop flow -->
+
+    <!-- ═══ MOBILE: Vertical journey ═══ -->
+    <div class="lg:hidden flex flex-col gap-0 reveal mb-4">
+
+      <!-- El proceso collapsible box (mobile) -->
+      <div style="border:1px solid rgba(211,153,69,0.2);border-radius:4px;overflow:hidden;margin-bottom:4px;">
+        <button onclick="toggleProcesoMobile()" class="proceso-header-mobile w-full flex flex-col items-center justify-center gap-1 px-4 py-3 cursor-pointer" style="background:var(--cream-mid);border:none;">
+          <span class="font-serif font-bold" style="font-size:1.35rem;letter-spacing:-0.01em;color:var(--accent);">El proceso</span>
+          <span class="proceso-arrow-mobile font-sans text-lg leading-none" style="color:var(--accent);transition:transform 0.25s;">▾</span>
+        </button>
+        <div id="proceso-content-mobile" style="max-height:0;overflow:hidden;transition:max-height 0.45s ease;">
+          <div class="pt-4 px-2 pb-2">
+
+      <!-- Step 1 -->
+      <div class="step-item relative" style="padding-left:36px;padding-bottom:28px;">
+        <div class="step-line absolute" style="left:14px;top:32px;bottom:0;width:1px;background:rgba(201,164,96,0.3);"></div>
+        <div class="step-circle absolute flex items-center justify-center" style="left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--cream-mid);border:1.5px solid var(--accent);">
+          <span class="step-num font-sans font-bold text-[10px]" style="color:var(--accent);">01</span>
+        </div>
+        <div class="step-header flex justify-between items-center cursor-pointer py-1" onclick="toggleStep('step-1')">
+          <span class="font-serif font-bold text-sm text-espresso">Diagnóstico</span>
+          <span class="step-arrow font-sans text-base" style="color:var(--accent);transition:transform 0.2s;">▾</span>
+        </div>
+        <div id="step-1" class="step-body" style="display:none;">
+          <p class="font-sans leading-relaxed mt-2 mb-2" style="font-size:13px;color:var(--espresso);">En el Diagnóstico miramos la empresa como un todo: cómo se organiza el trabajo, cómo usa su tiempo la dirección y cómo se lo está viviendo en el día a día. Mapeamos la agenda directiva, los procesos y reuniones clave, y las fricciones que el equipo percibe en su trabajo cotidiano.</p>
+          <div style="border-top:1px solid var(--line);margin:6px 0;"></div>
+          <span class="font-sans uppercase tracking-widest block mb-1" style="font-size:10px;color:var(--dark-mid);">Herramientas</span>
+          <div class="flex flex-wrap gap-1 mb-2">
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Mapeo del tiempo directivo</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Relevamiento de procesos y reuniones</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Lectura de fricciones del equipo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-item relative" style="padding-left:36px;padding-bottom:28px;">
+        <div class="step-line absolute" style="left:14px;top:32px;bottom:0;width:1px;background:rgba(201,164,96,0.3);"></div>
+        <div class="step-circle absolute flex items-center justify-center" style="left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--cream-mid);border:1.5px solid var(--accent);">
+          <span class="step-num font-sans font-bold text-[10px]" style="color:var(--accent);">02</span>
+        </div>
+        <div class="step-header flex justify-between items-center cursor-pointer py-1" onclick="toggleStep('step-2')">
+          <span class="font-serif font-bold text-sm text-espresso">Adaptación</span>
+          <span class="step-arrow font-sans text-base" style="color:var(--accent);transition:transform 0.2s;">▾</span>
+        </div>
+        <div id="step-2" class="step-body" style="display:none;">
+          <p class="font-sans leading-relaxed mt-2 mb-2" style="font-size:13px;color:var(--espresso);">En la etapa de Adaptación traducimos lo que vimos en el diagnóstico en un plan concreto para tu empresa. Trabajamos con la dirección para definir cuánto tiempo liberar, qué actividades se queda la dirección, qué se delega y con qué reglas.</p>
+          <div style="border-top:1px solid var(--line);margin:6px 0;"></div>
+          <span class="font-sans uppercase tracking-widest block mb-1" style="font-size:10px;color:var(--dark-mid);">Herramientas</span>
+          <div class="flex flex-wrap gap-1 mb-2">
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Definición de objetivos y tiempos a liberar</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Priorización de procesos y rituales</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Diseño del plan de implementación</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Reuniones diarias y semanales de gestión</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Espacios de seguimiento y revisión</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Automatización de tareas clave</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Coaching individual o de equipo</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Psico para sociedades de pareja</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Psico para sociedades familiares</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Dinámicas de grupo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-item relative" style="padding-left:36px;padding-bottom:28px;">
+        <div class="step-line absolute" style="left:14px;top:32px;bottom:0;width:1px;background:rgba(201,164,96,0.3);"></div>
+        <div class="step-circle absolute flex items-center justify-center" style="left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--cream-mid);border:1.5px solid var(--accent);">
+          <span class="step-num font-sans font-bold text-[10px]" style="color:var(--accent);">03</span>
+        </div>
+        <div class="step-header flex justify-between items-center cursor-pointer py-1" onclick="toggleStep('step-3')">
+          <span class="font-serif font-bold text-sm text-espresso">Implementación</span>
+          <span class="step-arrow font-sans text-base" style="color:var(--accent);transition:transform 0.2s;">▾</span>
+        </div>
+        <div id="step-3" class="step-body" style="display:none;">
+          <p class="font-sans leading-relaxed mt-2 mb-2" style="font-size:13px;color:var(--espresso);">En la etapa de Implementación trabajamos con tu equipo para liberar tiempo de la dirección llevando el método que adaptamos a la práctica diaria. Les enseñamos a definir, acordar y documentar cómo se trabaja, acuerdos entre áreas y rituales de gestión que ordenan el día a día sin sumar burocracia.</p>
+          <div style="border-top:1px solid var(--line);margin:6px 0;"></div>
+          <span class="font-sans uppercase tracking-widest block mb-1" style="font-size:10px;color:var(--dark-mid);">Herramientas</span>
+          <div class="flex flex-wrap gap-1 mb-2">
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Diseño de procesos</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Redacción de procedimientos</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Comunicación Efectiva</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Instructivos de trabajo</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Formularios y registros</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Reuniones diarias</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Reuniones semanales</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Tablero Kanban</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Seguimiento de compromisos</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Sprint Organizacional</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Consolidación</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">ISO 9001 Vivo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 (no connecting line) -->
+      <div class="step-item relative" style="padding-left:36px;padding-bottom:28px;">
+        <div class="step-circle absolute flex items-center justify-center" style="left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--cream-mid);border:1.5px solid var(--accent);">
+          <span class="step-num font-sans font-bold text-[10px]" style="color:var(--accent);">04</span>
+        </div>
+        <div class="step-header flex justify-between items-center cursor-pointer py-1" onclick="toggleStep('step-4')">
+          <span class="font-serif font-bold text-sm text-espresso">Seguimiento</span>
+          <span class="step-arrow font-sans text-base" style="color:var(--accent);transition:transform 0.2s;">▾</span>
+        </div>
+        <div id="step-4" class="step-body" style="display:none;">
+          <p class="font-sans leading-relaxed mt-2 mb-2" style="font-size:13px;color:var(--espresso);">En la etapa de Seguimiento hacemos un trabajo específico con la dirección para que use el tiempo liberado en pensar el negocio, el futuro de la empresa y las decisiones de largo plazo. Trabajamos como entrenador ayudando a traducir ese pensamiento estratégico en la nueva realidad de la empresa.</p>
+          <div style="border-top:1px solid var(--line);margin:6px 0;"></div>
+          <span class="font-sans uppercase tracking-widest block mb-1" style="font-size:10px;color:var(--dark-mid);">Herramientas</span>
+          <div class="flex flex-wrap gap-1 mb-2">
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Mentoría estratégica</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Auditorías livianas</span>
+            <span class="font-sans text-[10px] text-espresso px-2 py-1 rounded-sm" style="background:var(--cream-mid);border:1px solid rgba(211,153,69,0.25);">Rituales de mejora</span>
+          </div>
+        </div>
+      </div>
+
+          </div><!-- inner padding wrapper -->
+        </div><!-- proceso-content-mobile -->
+      </div><!-- proceso box mobile -->
+
+      <!-- Red de contención (mobile) -->
+      <p class="font-serif italic text-sm text-center mt-4 mb-2" style="color: var(--dark-mid);">Cada empresa entra en la etapa que corresponde a su realidad.</p>
+      <div class="flex items-center justify-center gap-3 px-4 py-3 rounded-sm mt-2" style="background:var(--bg2);">
+        <span style="width:6px;height:6px;border-radius:50%;background:#C9A460;flex-shrink:0;display:inline-block;"></span>
+        <span class="font-sans font-bold text-[11px] tracking-wide" style="color:#F0E8D8;">Red de contención Nogolí — acompañamiento en cada etapa del proceso</span>
+        <span style="width:6px;height:6px;border-radius:50%;background:#C9A460;flex-shrink:0;display:inline-block;"></span>
+      </div>
+
+    </div><!-- end mobile journey -->
+
+    <!-- â•â•â• Red de contención (Desktop) â•â•â• -->
+    <p class="hidden lg:block reveal font-serif italic text-sm text-center mt-10 mb-2" style="color: var(--dark-mid);">Cada empresa entra en la etapa que corresponde a su realidad.</p>
+    <div class="hidden lg:flex reveal items-center justify-center gap-3 px-5 py-3 rounded-sm mt-0 mb-10" style="background:var(--bg2);">
+      <span style="width:6px;height:6px;border-radius:50%;background:#C9A460;flex-shrink:0;display:inline-block;"></span>
+      <span class="font-sans font-bold text-[11px] tracking-wide" style="color:#F0E8D8;">Red de contención Nogolí — acompañamiento en cada etapa del proceso</span>
+      <span style="width:6px;height:6px;border-radius:50%;background:#C9A460;flex-shrink:0;display:inline-block;"></span>
+    </div>
+
+    <!-- â•â•â• Pilares â•â•â• -->
+    <div class="reveal mb-10">
+      <div class="reveal mt-20 pt-16 mb-8" style="border-top: 1px solid rgba(211,153,69,0.2);">
+        <h3 class="font-serif text-espresso mb-3" style="font-size: clamp(28px, 4vw, 42px); line-height: 1.2;">
+          Los 4 pilares
+        </h3>
+        <p class="font-sans text-base font-semibold leading-snug mb-4 max-w-xl" style="color: var(--espresso);">
+          La estructura invisible que sostiene el método Nogolí
+        </p>
+        <p class="font-sans text-base font-light leading-loose max-w-2xl" style="color: var(--dark-mid);">
+          El método Nogolí funciona porque no depende de una persona ni de una consultoría, sino de una estructura que ordena el tiempo del director, la forma de trabajar del equipo y la manera en que la empresa se coordina todos los días. Estos cuatro pilares son esa estructura.
+        </p>
+      </div>
+
+      <!-- Tags -->
+      <div class="flex flex-wrap gap-3 mb-4">
+        <button class="pilar-tag inline-flex flex-col items-start gap-1" data-pilar="pilar-d-1" onclick="togglePilar('pilar-d-1')" style="padding:10px 16px;border:1px solid rgba(211,153,69,0.25);border-bottom:2px solid var(--accent);background:var(--cream);border-radius:4px;cursor:pointer;transition:all 0.2s;">
+          <div class="flex items-center gap-2">
+            <span class="pilar-num font-sans font-bold text-[9px]" style="color:var(--accent);">P1</span>
+            <span class="pilar-label font-sans text-[11px] text-espresso leading-snug">Liberación del tiempo directivo</span>
+          </div>
+          <span class="pilar-subtitle font-sans text-[9px] leading-snug" style="color:var(--dark-mid);font-style:italic;">Sin tiempo, no hay estrategia</span>
+        </button>
+        <button class="pilar-tag inline-flex flex-col items-start gap-1" data-pilar="pilar-d-2" onclick="togglePilar('pilar-d-2')" style="padding:10px 16px;border:1px solid rgba(211,153,69,0.25);border-bottom:2px solid var(--accent);background:var(--cream);border-radius:4px;cursor:pointer;transition:all 0.2s;">
+          <div class="flex items-center gap-2">
+            <span class="pilar-num font-sans font-bold text-[9px]" style="color:var(--accent);">P2</span>
+            <span class="pilar-label font-sans text-[11px] text-espresso leading-snug">Traducción Organizacional</span>
+          </div>
+          <span class="pilar-subtitle font-sans text-[9px] leading-snug" style="color:var(--dark-mid);font-style:italic;">La estrategia se vuelca en el trabajo diario</span>
+        </button>
+        <button class="pilar-tag inline-flex flex-col items-start gap-1" data-pilar="pilar-d-3" onclick="togglePilar('pilar-d-3')" style="padding:10px 16px;border:1px solid rgba(211,153,69,0.25);border-bottom:2px solid var(--accent);background:var(--cream);border-radius:4px;cursor:pointer;transition:all 0.2s;">
+          <div class="flex items-center gap-2">
+            <span class="pilar-num font-sans font-bold text-[9px]" style="color:var(--accent);">P3</span>
+            <span class="pilar-label font-sans text-[11px] text-espresso leading-snug">Confianza y Liderazgo</span>
+          </div>
+          <span class="pilar-subtitle font-sans text-[9px] leading-snug" style="color:var(--dark-mid);font-style:italic;">Sin confianza, las cosas se hacen por control</span>
+        </button>
+        <button class="pilar-tag inline-flex flex-col items-start gap-1" data-pilar="pilar-d-4" onclick="togglePilar('pilar-d-4')" style="padding:10px 16px;border:1px solid rgba(211,153,69,0.25);border-bottom:2px solid var(--accent);background:var(--cream);border-radius:4px;cursor:pointer;transition:all 0.2s;">
+          <div class="flex items-center gap-2">
+            <span class="pilar-num font-sans font-bold text-[9px]" style="color:var(--accent);">P4</span>
+            <span class="pilar-label font-sans text-[11px] text-espresso leading-snug">Comunicación y Coordinación</span>
+          </div>
+          <span class="pilar-subtitle font-sans text-[9px] leading-snug" style="color:var(--dark-mid);font-style:italic;">Lo que se decide llega claro a quien ejecuta</span>
+        </button>
+      </div>
+
+      <!-- Pilar panels -->
+      <div id="pilar-d-1" class="pilar-panel overflow-hidden" style="max-height:0;transition:max-height 0.3s ease;">
+        <div class="p-6 rounded-sm mb-2" style="background:var(--bg2);border-left:3px solid var(--accent);">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <span class="font-sans text-[9px] tracking-widest uppercase block mb-1" style="color:var(--accent);">Pilar 01</span>
+              <h3 class="font-serif font-bold text-xl" style="color:var(--cream);">Liberación del tiempo directivo</h3>
+              <p class="font-sans text-sm italic mt-1" style="color:rgba(250,243,228,0.6);">Sin tiempo, no hay estrategia.</p>
+            </div>
+            <button onclick="togglePilar('pilar-d-1')" class="font-sans text-[10px] px-2 py-1 cursor-pointer shrink-0" style="border:1px solid var(--accent);color:var(--accent);background:transparent;">✕ cerrar</button>
+          </div>
+          <p class="font-sans text-sm leading-loose mb-4" style="color:rgba(250,243,228,0.8);">Si la dirección no tiene tiempo para pensar y decidir, el rumbo de la empresa lo define la inercia, no sus elecciones. Liberar ese tiempo permite elegir con intención hacia dónde ir.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Mapa del tiempo directivo actual</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Criterios claros de delegación</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Sistema de supervisión liviana</span>
+          </div>
+          <div class="flex items-center justify-end gap-3 mt-5 pt-4" style="border-top:1px solid rgba(211,153,69,0.15);">
+            <div class="text-right">
+              <p class="font-serif font-bold text-[11px]" style="color:var(--cream);">Sergio Martín Celuch</p>
+              <p class="font-sans text-[9px] tracking-widest uppercase mt-0.5" style="color:var(--accent);">Creador del método Nogolí</p>
+            </div>
+            <img src="/imagenes/perfil/sergio6.jpg" alt="Sergio Celuch" style="width:40px;height:40px;object-fit:cover;object-position:top;border-radius:50%;border:1px solid rgba(211,153,69,0.3);" />
+          </div>
+        </div>
+      </div>
+
+      <div id="pilar-d-2" class="pilar-panel overflow-hidden" style="max-height:0;transition:max-height 0.3s ease;">
+        <div class="p-6 rounded-sm mb-2" style="background:var(--bg2);border-left:3px solid var(--accent);">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <span class="font-sans text-[9px] tracking-widest uppercase block mb-1" style="color:var(--accent);">Pilar 02</span>
+              <h3 class="font-serif font-bold text-xl" style="color:var(--cream);">Traducción Organizacional</h3>
+              <p class="font-sans text-sm italic mt-1" style="color:rgba(250,243,228,0.6);">La estrategia se tiene que volcar en el trabajo diario.</p>
+            </div>
+            <button onclick="togglePilar('pilar-d-2')" class="font-sans text-[10px] px-2 py-1 cursor-pointer shrink-0" style="border:1px solid var(--accent);color:var(--accent);background:transparent;">✕ cerrar</button>
+          </div>
+          <p class="font-sans text-sm leading-loose mb-4" style="color:rgba(250,243,228,0.8);">Si lo que se decide arriba no cambia cómo se trabaja abajo, la estrategia es decoración. Este pilar asegura que las decisiones se vuelvan procesos y acuerdos concretos.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Procesos usables, no documentos formales</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Instructivos que el equipo adopta naturalmente</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Roles y responsabilidades claros</span>
+          </div>
+          <div class="flex items-center justify-end gap-3 mt-5 pt-4" style="border-top:1px solid rgba(211,153,69,0.15);">
+            <div class="text-right">
+              <p class="font-serif font-bold text-[11px]" style="color:var(--cream);">Sergio Martín Celuch</p>
+              <p class="font-sans text-[9px] tracking-widest uppercase mt-0.5" style="color:var(--accent);">Creador del método Nogolí</p>
+            </div>
+            <img src="/imagenes/perfil/sergio6.jpg" alt="Sergio Celuch" style="width:40px;height:40px;object-fit:cover;object-position:top;border-radius:50%;border:1px solid rgba(211,153,69,0.3);" />
+          </div>
+        </div>
+      </div>
+
+      <div id="pilar-d-3" class="pilar-panel overflow-hidden" style="max-height:0;transition:max-height 0.3s ease;">
+        <div class="p-6 rounded-sm mb-2" style="background:var(--bg2);border-left:3px solid var(--accent);">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <span class="font-sans text-[9px] tracking-widest uppercase block mb-1" style="color:var(--accent);">Pilar 03</span>
+              <h3 class="font-serif font-bold text-xl" style="color:var(--cream);">Confianza y Liderazgo</h3>
+              <p class="font-sans text-sm italic mt-1" style="color:rgba(250,243,228,0.6);">Sin confianza, las cosas se hacen por control.</p>
+            </div>
+            <button onclick="togglePilar('pilar-d-3')" class="font-sans text-[10px] px-2 py-1 cursor-pointer shrink-0" style="border:1px solid var(--accent);color:var(--accent);background:transparent;">✕ cerrar</button>
+          </div>
+          <p class="font-sans text-sm leading-loose mb-4" style="color:rgba(250,243,228,0.8);">Si las personas no confían en quienes conducen, los procesos se cumplen de compromiso pero no se usan para mejorar. Con confianza, el sistema se vuelve la forma elegida de trabajar.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Autonomía con alineación real</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Transición del liderazgo operativo al estratégico</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Espacios de claridad y participación</span>
+          </div>
+          <div class="flex items-center justify-end gap-3 mt-5 pt-4" style="border-top:1px solid rgba(211,153,69,0.15);">
+            <div class="text-right">
+              <p class="font-serif font-bold text-[11px]" style="color:var(--cream);">Sergio Martín Celuch</p>
+              <p class="font-sans text-[9px] tracking-widest uppercase mt-0.5" style="color:var(--accent);">Creador del método Nogolí</p>
+            </div>
+            <img src="/imagenes/perfil/sergio6.jpg" alt="Sergio Celuch" style="width:40px;height:40px;object-fit:cover;object-position:top;border-radius:50%;border:1px solid rgba(211,153,69,0.3);" />
+          </div>
+        </div>
+      </div>
+
+      <div id="pilar-d-4" class="pilar-panel overflow-hidden" style="max-height:0;transition:max-height 0.3s ease;">
+        <div class="p-6 rounded-sm mb-2" style="background:var(--bg2);border-left:3px solid var(--accent);">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <span class="font-sans text-[9px] tracking-widest uppercase block mb-1" style="color:var(--accent);">Pilar 04</span>
+              <h3 class="font-serif font-bold text-xl" style="color:var(--cream);">Comunicación y Coordinación</h3>
+              <p class="font-sans text-sm italic mt-1" style="color:rgba(250,243,228,0.6);">Lo que se decide tiene que llegar claro a quien ejecuta.</p>
+            </div>
+            <button onclick="togglePilar('pilar-d-4')" class="font-sans text-[10px] px-2 py-1 cursor-pointer shrink-0" style="border:1px solid var(--accent);color:var(--accent);background:transparent;">✕ cerrar</button>
+          </div>
+          <p class="font-sans text-sm leading-loose mb-4" style="color:rgba(250,243,228,0.8);">Si las conversaciones son caóticas, ningún sistema se sostiene. Este pilar ordena qué se habla, cuándo y para qué, para que las decisiones se conviertan en acción coordinada.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Rituales de coordinación con propósito claro</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Sistema de compromisos y seguimiento</span>
+            <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Comunicación que reduce escalamientos</span>
+          </div>
+          <div class="flex items-center justify-end gap-3 mt-5 pt-4" style="border-top:1px solid rgba(211,153,69,0.15);">
+            <div class="text-right">
+              <p class="font-serif font-bold text-[11px]" style="color:var(--cream);">Sergio Martín Celuch</p>
+              <p class="font-sans text-[9px] tracking-widest uppercase mt-0.5" style="color:var(--accent);">Creador del método Nogolí</p>
+            </div>
+            <img src="/imagenes/perfil/sergio6.jpg" alt="Sergio Celuch" style="width:40px;height:40px;object-fit:cover;object-position:top;border-radius:50%;border:1px solid rgba(211,153,69,0.3);" />
+          </div>
+        </div>
+      </div>
+    </div><!-- end pilares -->
+
+    <!-- Mobile pilar modal sheet -->
+    <div id="mobile-modal-overlay" class="fixed inset-0 z-50 lg:hidden" style="background:rgba(0,0,0,0.55);display:none;" onclick="closeMobileModal()">
+      <div id="mobile-modal-sheet" class="absolute bottom-0 left-0 right-0 overflow-y-auto" style="background:var(--bg2);border-radius:12px 12px 0 0;padding:18px;max-height:72vh;" onclick="event.stopPropagation()">
+        <div class="flex justify-center mb-3">
+          <div style="width:36px;height:4px;border-radius:2px;background:rgba(201,164,96,0.3);"></div>
+        </div>
+        <div id="mobile-modal-content"></div>
+      </div>
+    </div>
+
+    <!-- Hidden pilar data for mobile modal -->
+    <template id="m-pilar-1">
+      <span class="font-sans text-[9px] tracking-widest uppercase block mb-1" style="color:var(--accent);">Pilar 01</span>
+      <h3 class="font-serif font-bold text-xl mb-3" style="color:var(--cream);">Liberación del tiempo directivo</h3>
+      <p class="font-sans text-sm leading-loose mb-4" style="color:rgba(250,243,228,0.8);">Si la dirección no tiene tiempo para pensar y decidir, el rumbo de la empresa lo define la inercia, no sus elecciones. Liberar ese tiempo permite elegir con intención hacia dónde ir.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Mapa del tiempo directivo actual</span>
+        <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Criterios claros de delegación</span>
+        <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Sistema de supervisión liviana</span>
+      </div>
+    </template>
+    <template id="m-pilar-2">
+      <span class="font-sans text-[9px] tracking-widest uppercase block mb-1" style="color:var(--accent);">Pilar 02</span>
+      <h3 class="font-serif font-bold text-xl mb-3" style="color:var(--cream);">Traducción Organizacional</h3>
+      <p class="font-sans text-sm leading-loose mb-4" style="color:rgba(250,243,228,0.8);">Si lo que se decide arriba no cambia cómo se trabaja abajo, la estrategia es decoración. Este pilar asegura que las decisiones se vuelvan procesos y acuerdos concretos.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Procesos usables, no documentos formales</span>
+        <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Instructivos que el equipo adopta naturalmente</span>
+        <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Roles y responsabilidades claros</span>
+      </div>
+    </template>
+    <template id="m-pilar-3">
+      <span class="font-sans text-[9px] tracking-widest uppercase block mb-1" style="color:var(--accent);">Pilar 03</span>
+      <h3 class="font-serif font-bold text-xl mb-3" style="color:var(--cream);">Confianza y Liderazgo</h3>
+      <p class="font-sans text-sm leading-loose mb-4" style="color:rgba(250,243,228,0.8);">Si las personas no confían en quienes conducen, los procesos se cumplen de compromiso pero no se usan para mejorar. Con confianza, el sistema se vuelve la forma elegida de trabajar.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Autonomía con alineación real</span>
+        <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Transición del liderazgo operativo al estratégico</span>
+        <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Espacios de claridad y participación</span>
+      </div>
+    </template>
+    <template id="m-pilar-4">
+      <span class="font-sans text-[9px] tracking-widest uppercase block mb-1" style="color:var(--accent);">Pilar 04</span>
+      <h3 class="font-serif font-bold text-xl mb-3" style="color:var(--cream);">Comunicación y Coordinación</h3>
+      <p class="font-sans text-sm leading-loose mb-4" style="color:rgba(250,243,228,0.8);">Si las conversaciones son caóticas, ningún sistema se sostiene. Este pilar ordena qué se habla, cuándo y para qué, para que las decisiones se conviertan en acción coordinada.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Rituales de coordinación con propósito claro</span>
+        <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Sistema de compromisos y seguimiento</span>
+        <span class="font-sans text-[10px] px-3 py-1 rounded-sm" style="background:rgba(201,164,96,0.1);border:1px solid rgba(201,164,96,0.2);color:#E8D5A3;">Comunicación que reduce escalamientos</span>
+      </div>
+    </template>
+
+  </div>
+</section>
+
+<style>
+  /* Proceso box header hover */
+  .proceso-header:hover { background: var(--cream) !important; }
+  .proceso-header-mobile:hover { background: var(--cream) !important; }
+
+  /* Phase node hover */
+  .phase-node .phase-hint { opacity: 0; transition: opacity 0.2s; }
+  .phase-node:hover .phase-hint { opacity: 1; }
+  .phase-node:hover .phase-circle { background: var(--cream) !important; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+  /* Phase node active state */
+  .phase-node.active .phase-circle { background: var(--espresso) !important; }
+  .phase-node.active .phase-num { color: var(--accent) !important; }
+
+  /* Pilar tag hover */
+  .pilar-tag:hover { background: var(--cream-mid) !important; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+  .pilar-tag.active { background: var(--espresso) !important; }
+  .pilar-tag.active .pilar-label { color: var(--cream) !important; }
+
+  /* Step open state */
+  .step-item.open .step-arrow { transform: rotate(180deg); }
+  .step-item.open .step-circle { background: var(--espresso) !important; }
+</style>
+
+<script>
+  let openFaseId: string | null = null;
+  let openPilarId: string | null = null;
+
+  function toggleFase(id: string) {
+    const panel = document.getElementById(id) as HTMLElement | null;
+    const node  = document.querySelector(`.phase-node[data-fase="${id}"]`) as HTMLElement | null;
+    if (!panel) return;
+
+    if (openFaseId && openFaseId !== id) {
+      const prev = document.getElementById(openFaseId) as HTMLElement | null;
+      const prevNode = document.querySelector(`.phase-node[data-fase="${openFaseId}"]`) as HTMLElement | null;
+      if (prev) prev.style.maxHeight = '0';
+      if (prevNode) prevNode.classList.remove('active');
+    }
+
+    const isOpen = panel.style.maxHeight !== '0px' && panel.style.maxHeight !== '';
+    if (isOpen) {
+      panel.style.maxHeight = '0';
+      if (node) node.classList.remove('active');
+      openFaseId = null;
+    } else {
+      panel.style.maxHeight = '900px';
+      if (node) node.classList.add('active');
+      openFaseId = id;
+    }
+  }
+
+  function togglePilar(id: string) {
+    const panel = document.getElementById(id) as HTMLElement | null;
+    const tag   = document.querySelector(`.pilar-tag[data-pilar="${id}"]`) as HTMLElement | null;
+    if (!panel) return;
+
+    if (openPilarId && openPilarId !== id) {
+      const prev = document.getElementById(openPilarId) as HTMLElement | null;
+      const prevTag = document.querySelector(`.pilar-tag[data-pilar="${openPilarId}"]`) as HTMLElement | null;
+      if (prev) prev.style.maxHeight = '0';
+      if (prevTag) prevTag.classList.remove('active');
+    }
+
+    const isOpen = panel.style.maxHeight !== '0px' && panel.style.maxHeight !== '';
+    if (isOpen) {
+      panel.style.maxHeight = '0';
+      if (tag) tag.classList.remove('active');
+      openPilarId = null;
+    } else {
+      panel.style.maxHeight = '400px';
+      if (tag) tag.classList.add('active');
+      openPilarId = id;
+    }
+  }
+
+  function toggleStep(id: string) {
+    const body   = document.getElementById(id) as HTMLElement | null;
+    const item   = body?.closest('.step-item') as HTMLElement | null;
+    if (!body || !item) return;
+    const isOpen = body.style.display !== 'none';
+    body.style.display = isOpen ? 'none' : 'block';
+    item.classList.toggle('open', !isOpen);
+  }
+
+  function openMobileModal(templateId: string) {
+    const tpl     = document.getElementById(templateId) as HTMLTemplateElement | null;
+    const overlay = document.getElementById('mobile-modal-overlay') as HTMLElement | null;
+    const content = document.getElementById('mobile-modal-content') as HTMLElement | null;
+    if (!tpl || !overlay || !content) return;
+    content.innerHTML = '';
+    content.appendChild(tpl.content.cloneNode(true));
+    overlay.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileModal() {
+    const overlay = document.getElementById('mobile-modal-overlay') as HTMLElement | null;
+    if (!overlay) return;
+    overlay.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function toggleProcesoMobile() {
+    const content = document.getElementById('proceso-content-mobile') as HTMLElement | null;
+    const arrow   = document.querySelector('.proceso-arrow-mobile') as HTMLElement | null;
+    if (!content) return;
+    const isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
+    if (isOpen) {
+      content.style.maxHeight = '0';
+      if (arrow) arrow.style.transform = 'rotate(0deg)';
+    } else {
+      content.style.maxHeight = '3000px';
+      if (arrow) arrow.style.transform = 'rotate(180deg)';
+    }
+  }
+
+  function toggleProceso() {
+    const content = document.getElementById('proceso-content') as HTMLElement | null;
+    const arrow   = document.querySelector('.proceso-arrow') as HTMLElement | null;
+    if (!content) return;
+    const isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
+    if (isOpen) {
+      content.style.maxHeight = '0';
+      if (arrow) arrow.style.transform = 'rotate(0deg)';
+    } else {
+      content.style.maxHeight = '3000px';
+      if (arrow) arrow.style.transform = 'rotate(180deg)';
+    }
+  }
+
+  // Expose to inline onclick handlers
+  (window as any).toggleProcesoMobile = toggleProcesoMobile;
+  (window as any).toggleProceso = toggleProceso;
+  (window as any).toggleFase = toggleFase;
+  (window as any).togglePilar = togglePilar;
+  (window as any).toggleStep = toggleStep;
+  (window as any).openMobileModal = openMobileModal;
+  (window as any).closeMobileModal = closeMobileModal;
+</script>

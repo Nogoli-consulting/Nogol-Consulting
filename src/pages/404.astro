@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NavbarScroll from '../components/islands/NavbarScroll.jsx';
+import Footer from '../components/layout/Footer.astro';
+---
+
+<Layout
+  title="Página no encontrada — Nogolí Consulting"
+  description="La página que buscás no existe o fue movida."
+  noIndex={true}
+>
+  <NavbarScroll client:load />
+
+  <main class="bg-cream min-h-screen flex items-center justify-center py-32">
+    <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center">
+
+      <!-- Eyebrow + headings -->
+      <div class="eyebrow mb-4">Página no encontrada</div>
+      <h1 class="font-serif text-espresso mb-6" style="font-size: clamp(36px, 5vw, 60px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 900;">
+        Esta página no existe.
+      </h1>
+      <p class="font-sans text-base font-light leading-relaxed max-w-md mb-10" style="color: var(--dark-mid);">
+        La URL que ingresaste no fue encontrada. Puede que haya sido movida o que el link esté desactualizado.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-wrap gap-4 justify-center mb-16">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-gold-dark text-cream font-sans text-sm font-medium tracking-wide transition-colors duration-300 hover:bg-accent2"
+        >
+          ← Volver al inicio
+        </a>
+        <a
+          href="/#contacto"
+          class="inline-flex items-center gap-2 px-8 py-4 border border-espresso text-espresso font-sans text-sm font-light tracking-wide transition-all duration-300 hover:bg-espresso hover:text-cream"
+        >
+          Contacto
+        </a>
+      </div>
+
+      <!-- 404 background number -->
+      <div
+        class="font-serif font-bold leading-none select-none pointer-events-none -mt-8"
+        style="font-size: clamp(96px, 20vw, 180px); color: var(--accent); opacity: 0.15;"
+        aria-hidden="true"
+      >
+        404
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

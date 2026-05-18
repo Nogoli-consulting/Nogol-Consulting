@@ -1,0 +1,147 @@
+---
+const formacion = [
+  'Licenciado en Organización Industrial — UTN',
+  'MBA — UTN',
+];
+
+// TODO: confirm exact numbers and sectors with client
+const contexto = [
+  '+15 proyectos de implementación',
+  'Industrias: alimentaria, servicios, manufactura, retail',
+  'Empresas de 10 a 200 personas',
+  'Buenos Aires y AMBA',
+];
+---
+
+<section id="sobre" class="bg-cream-mid py-28 md:py-40">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+
+      <!-- Left: Text -->
+      <div class="flex flex-col gap-10">
+        <div class="flex flex-col gap-6">
+          <div class="reveal eyebrow">Quién soy</div>
+          <h2 class="reveal reveal-delay-1 font-serif text-espresso" style="font-size: clamp(36px, 5vw, 52px); line-height: 1.2; letter-spacing: -0.01em;">
+            <span>Un consultor que entrena</span>
+          </h2>
+          <p class="reveal reveal-delay-2 font-sans text-base md:text-lg font-semibold leading-snug max-w-xl" style="color: var(--espresso);">
+            Un entrenador obsesionado con que las empresas se conviertan en lo que están llamadas a ser.
+          </p>
+        </div>
+
+        <div class="reveal reveal-delay-2 flex flex-col gap-5">
+          <p class="font-sans text-base font-normal md:font-light leading-loose" style="color: var(--espresso);">
+            Soy Sergio Celuch y después de años liderando proyectos de supply chain y operaciones en contextos corporativos complejos, entendí que muchas organizaciones se estancan porque quedan atrapadas en el día a día.
+          </p>
+          <p class="font-sans text-base font-normal md:font-light leading-loose" style="color: var(--espresso);">
+            Para resolverlo, diseñé el método Nogolí, un concepto que trasciende a una persona y que cualquier empresa puede adoptar. Desde Nogolí Consulting entrenamos a las personas para que definan y documenten su forma de trabajar, y la conviertan en un sistema de gestión vivo que el equipo comprende y mejora día a día.
+          </p>
+          <p class="font-sans text-base font-normal md:font-light leading-loose" style="color: var(--espresso);">
+            El objetivo es que la organización se apropíe de su propia dinámica y funcione con la claridad necesaria para que la dirección pueda proyectar el futuro y los equipos entiendan cómo contribuir a ese crecimiento.
+          </p>
+          <p class="font-sans text-base font-normal md:font-light leading-loose" style="color: var(--espresso);">
+            Dentro de Nogolí lidero un equipo que acompaña a la organización en un camino con principio y fin, enfocado en dejar instalado un sistema sólido y sostenible, que le permita operar con autonomía y solidez.
+          </p>
+        </div>
+
+        <!-- Quote (desktop only) -->
+        <blockquote class="hidden lg:block reveal reveal-delay-3 pl-6 py-5 px-6 bg-cream" style="border-left: 3px solid var(--accent);">
+          <p class="font-serif text-[17px] font-semibold italic leading-relaxed" style="color: var(--dark-mid);">
+            &ldquo;No se trata de documentar por cumplir, sino de alinear dirección,
+            procesos, liderazgo y comunicación.&rdquo;
+          </p>
+        </blockquote>
+
+        <!-- Formación (desktop only) -->
+        <ul class="hidden lg:flex reveal reveal-delay-3 flex-col gap-3">
+          {formacion.map((cred) => (
+            <li class="flex items-start gap-4 font-sans text-sm font-light" style="color: var(--dark-mid);">
+              <span class="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+              {cred}
+            </li>
+          ))}
+        </ul>
+
+        <!-- Contexto/credentials (desktop only) -->
+        <div class="hidden lg:flex reveal reveal-delay-3 flex-wrap gap-2">
+          {contexto.map((item) => (
+            <span class="font-sans text-xs px-3 py-1.5 inline-block" style="border: 1px solid rgba(211,153,69,0.35); background: var(--cream); color: var(--espresso);">
+              {item}
+            </span>
+          ))}
+        </div>
+
+      </div>
+
+      <!-- Right: Photo + Stats -->
+      <div class="reveal reveal-delay-2 flex flex-col gap-8">
+
+        <!-- Photo wrapper -->
+        <div class="relative pb-0 lg:pb-0">
+          <!-- Decorative border offset (solo desktop) -->
+          <div class="hidden lg:block absolute -top-4 -right-4 w-full h-full border border-accent/25 z-0"></div>
+
+          <!-- Photo -->
+          <div class="relative z-10 w-full aspect-3/4 bg-bg3 overflow-hidden">
+            <img
+              src="/imagenes/perfil/SergioMartin44.jpg"
+              alt="Sergio Martín Celuch — Nogolí Consulting"
+              class="w-full h-full object-cover object-top"
+              loading="lazy"
+              width="800"
+              height="1067"
+            />
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,26,14,0.12) 0%, transparent 60%);"></div>
+          </div>
+
+          <!-- Name tag -->
+          <div class="hidden lg:block absolute -bottom-5 left-5 z-20 bg-cream border border-line px-5 py-3">
+            <p class="font-serif text-base font-semibold text-espresso">Sergio Martín Celuch</p>
+            <p class="font-sans text-[10px] uppercase tracking-widest mt-0.5" style="color: var(--accent);">Founder, Nogolí Consulting</p>
+          </div>
+        </div>
+
+        <!-- Stats below photo -->
+        <div class="reveal reveal-delay-4 flex items-center gap-3 flex-wrap lg:mt-6">
+          <span class="font-sans text-xs font-medium tracking-[0.12em] uppercase border px-4 py-2" style="color: rgba(33,12,4,0.65); border-color: rgba(211,153,69,0.50);">10 años</span>
+          <span style="color: var(--accent); font-size: 10px;">|</span>
+          <span class="font-sans text-xs font-medium tracking-[0.12em] uppercase border px-4 py-2" style="color: rgba(33,12,4,0.65); border-color: rgba(211,153,69,0.50);">PyMEs y grandes empresas</span>
+          <span style="color: var(--accent); font-size: 10px;">|</span>
+          <span class="font-sans text-xs font-medium tracking-[0.12em] uppercase border px-4 py-2" style="color: rgba(33,12,4,0.65); border-color: rgba(211,153,69,0.50);">Buenos Aires</span>
+        </div>
+
+      </div>
+
+      <!-- Mobile-only: Quote + Formación (after photo) -->
+      <div class="lg:hidden flex flex-col gap-8">
+
+        <blockquote class="reveal reveal-delay-3 pl-6 py-5 px-6 bg-cream" style="border-left: 3px solid var(--accent);">
+          <p class="font-serif text-[17px] font-semibold italic leading-relaxed" style="color: var(--dark-mid);">
+            &ldquo;No se trata de documentar por cumplir, sino de alinear dirección,
+            procesos, liderazgo y comunicación.&rdquo;
+          </p>
+        </blockquote>
+
+        <ul class="reveal reveal-delay-3 flex flex-col gap-3">
+          {formacion.map((cred) => (
+            <li class="flex items-start gap-4 font-sans text-sm font-normal" style="color: var(--espresso);">
+              <span class="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+              {cred}
+            </li>
+          ))}
+        </ul>
+
+        <!-- Contexto/credentials (mobile only) -->
+        <div class="reveal reveal-delay-3 flex flex-wrap gap-2">
+          {contexto.map((item) => (
+            <span class="font-sans text-xs px-3 py-1.5 inline-block" style="border: 1px solid rgba(211,153,69,0.35); background: var(--cream); color: var(--espresso);">
+              {item}
+            </span>
+          ))}
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

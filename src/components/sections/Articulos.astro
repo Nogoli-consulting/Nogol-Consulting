@@ -1,0 +1,59 @@
+﻿---
+import ArticuloCard from '../ArticuloCard.astro';
+import NewsletterForm from '../islands/NewsletterForm.jsx';
+import { getAllPosts } from '../../lib/posts';
+
+const articulos = (await getAllPosts()).slice(0, 2);
+---
+
+<section id="articulos" class="bg-cream py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+
+    <div class="reveal flex flex-wrap items-end justify-between gap-6 mb-14">
+      <div class="flex flex-col gap-4">
+        <div class="eyebrow">Ideas y perspectivas</div>
+        <h2 class="font-serif text-espresso" style="font-size: clamp(32px, 4vw, 48px); line-height: 1.2; letter-spacing: -0.01em;">&#218;ltimos artículos</h2>
+        <p class="font-sans text-base font-semibold leading-snug max-w-xl" style="color: var(--espresso);">
+          Reflexiones sobre gestión, liderazgo y forma de trabajo
+        </p>
+      </div>
+      <a
+        href="/articulos"
+        class="font-sans text-sm font-light text-accent hover:text-accent2 transition-colors flex items-center gap-2"
+      >
+        Ver todos los artículos →
+      </a>
+    </div>
+
+    {articulos.length > 0 && (
+      <div class="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6">
+        {articulos[0] && (
+          <div class="reveal">
+            <ArticuloCard post={articulos[0]} featured={true} className="h-full" />
+          </div>
+        )}
+
+        <div class="flex flex-col gap-6">
+          {articulos.slice(1).map((art, i) => (
+            <div class={`reveal reveal-delay-${i + 1}`}>
+              <ArticuloCard post={art} />
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Newsletter subscription block -->
+    <div class="reveal mt-20 mx-auto text-center" style="max-width: 480px;">
+      <h3 class="font-serif text-espresso mb-3" style="font-size: clamp(22px, 3vw, 28px); line-height: 1.2; letter-spacing: -0.01em;">
+        Recibí los próximos artículos
+      </h3>
+      <p class="font-sans text-sm font-light mb-6" style="color: var(--dark-mid);">
+        Sin spam. Solo contenido sobre gestión y operaciones.
+      </p>
+      <NewsletterForm client:load />
+    </div>
+  </div>
+</section>
+
+

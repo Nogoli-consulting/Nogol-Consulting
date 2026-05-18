@@ -1,0 +1,45 @@
+---
+import { proceso } from '../../data/proceso';
+---
+
+<section id="proceso" class="bg-cream py-28 md:py-40">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <!-- Header -->
+    <div class="flex flex-col gap-5 mb-20 text-center">
+      <div class="reveal eyebrow justify-center">Cómo trabajo</div>
+      <h2 class="reveal reveal-delay-1 font-serif text-espresso" style="font-size: clamp(36px, 5vw, 52px); line-height: 1.2; letter-spacing: -0.01em;">
+        Un proceso claro, sin sorpresas.
+      </h2>
+    </div>
+
+    <!-- Steps -->
+    <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Connector line (desktop) -->
+      <div class="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-line z-0"></div>
+
+      {proceso.map((paso, i) => (
+        <div class={`reveal reveal-delay-${i + 1} relative flex flex-col items-center text-center gap-5 px-6 py-8 sm:px-8`}>
+          <!-- Circle with number -->
+          <div class="relative z-10 w-20 h-20 lg:w-24 lg:h-24 bg-cream-mid flex items-center justify-center shrink-0" style="border: 1.5px solid var(--accent);">
+            <span class="font-serif text-accent font-bold" style="font-size: 22px;">{paso.numero}</span>
+          </div>
+
+          <!-- Content -->
+          <div class="flex flex-col gap-3">
+            <h3 class="font-serif text-xl lg:text-2xl font-light text-espresso">
+              {paso.titulo}
+            </h3>
+            <p class="font-sans text-sm font-light leading-loose" style="color: var(--dark-mid);">
+              {paso.descripcion}
+            </p>
+          </div>
+
+          <!-- Mobile connector line -->
+          {i < proceso.length - 1 && (
+            <div class="sm:hidden w-px h-8 bg-line mt-1"></div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

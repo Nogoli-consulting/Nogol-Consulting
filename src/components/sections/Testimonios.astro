@@ -1,0 +1,36 @@
+---
+import { testimonios } from '../../data/testimonios';
+---
+
+<section id="testimonios" class="bg-cream py-28 md:py-40">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="flex flex-col gap-5 mb-16 md:text-center">
+      <div class="reveal eyebrow md:mx-auto">LO QUE DICEN</div>
+      <h2 class="reveal reveal-delay-1 font-serif text-espresso" style="font-size: clamp(36px, 5vw, 52px); line-height: 1.2; letter-spacing: -0.01em;">
+        Empresas que ya ordenaron su ejecución
+      </h2>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {testimonios.map((t, i) => (
+        <div
+          class={`reveal reveal-delay-${i + 1} flex flex-col gap-6 p-8`}
+          style="background: #FFF5EC; border-left: 3px solid #D39945;"
+        >
+          <blockquote class="font-serif text-[17px] italic font-normal leading-relaxed flex-1" style="color: #240F07;">
+            &ldquo;{t.frase}&rdquo;
+          </blockquote>
+          <div class="flex flex-col gap-0.5">
+            <p class="font-sans text-sm font-semibold" style="color: #240F07;">{t.nombre}</p>
+            <p class="font-sans text-xs font-normal" style="color: rgba(36,15,7,0.65);">{t.cargo}</p>
+            <p class="font-sans text-xs font-normal" style="color: rgba(36,15,7,0.50);">{t.empresa}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,180 @@
+﻿---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import BlogHeader from '../../components/blog/BlogHeader.astro';
+import Footer from '../../components/layout/Footer.astro';
+import ArticuloCard from '../../components/ArticuloCard.astro';
+import { getAllPosts, getPostBySlug } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const slug = Astro.params.slug ?? '';
+const post = slug ? await getPostBySlug(slug) : null;
+
+if (!post) {
+  throw new Error('Articulo no encontrado');
+}
+
+const markdownEntry = await getEntry('articulos', post.slug);
+const rendered = markdownEntry ? await render(markdownEntry) : null;
+const Content = rendered?.Content;
+
+const allPosts = await getAllPosts();
+const relatedPosts = allPosts
+  .filter((candidate) => candidate.slug !== post.slug && candidate.category === post.category)
+  .slice(0, 2);
+const fallbackRelated = allPosts
+  .filter((candidate) => candidate.slug !== post.slug)
+  .slice(0, 2);
+const recommendedPosts = (relatedPosts.length ? relatedPosts : fallbackRelated).slice(0, 2);
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('es-AR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
+}
+
+const siteUrl = 'https://nogoliconsulting.com';
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.title,
+  "description": post.excerpt,
+  "datePublished": post.date.toISOString(),
+  "dateModified": post.date.toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": "Sergio Martín Celuch",
+    "url": siteUrl
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nogolí Consulting",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/imagenes/logo/nuevologonog.svg`
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/articulos/${post.slug}`
+  },
+  ...(post.imageUrl ? {
+    "image": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}${post.imageUrl}`
+    }
+  } : {})
+};
+---
+
+<BlogLayout title={`${post.title} — Nogolí Consulting`} description={post.excerpt} ogImage={post.imageUrl ?? '/og-image.jpg'}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  <BlogHeader />
+
+  <main class="bg-bg min-h-screen">
+    <article class="pb-16 md:pb-24">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 pt-8 md:pt-10">
+        <nav class="font-sans text-sm text-muted mb-8">
+          <a href="/" class="hover:text-accent2 transition-colors">Inicio</a>
+          <span class="mx-2">→</span>
+          <a href="/articulos" class="hover:text-accent2 transition-colors">Artículos</a>
+          <span class="mx-2">→</span>
+          <span class="text-text">{post.title}</span>
+        </nav>
+
+        <a
+          href="/articulos"
+          class="inline-flex items-center gap-2 font-sans text-sm font-light text-muted hover:text-accent2 transition-colors mb-10"
+        >
+          ← Volver a artículos
+        </a>
+
+        <header class="border-b border-line pb-10 md:pb-12">
+          <div class="w-fit border border-accent/40 bg-accent/20 px-3 py-1 font-sans text-[10px] font-medium uppercase tracking-[0.22em] text-accent2 mb-6">
+            {post.category}
+          </div>
+
+          <h1 class="max-w-4xl font-serif text-4xl md:text-5xl lg:text-[3.25rem] font-light leading-tight text-text">
+            {post.title}
+          </h1>
+
+          <div class="mt-6 flex items-center gap-3 font-sans text-sm text-muted">
+            <time>{formatDate(post.date)}</time>
+            <span>·</span>
+            <span>{post.readTime} min de lectura</span>
+          </div>
+
+          <div class="relative mt-10 h-64 md:h-80 overflow-hidden border border-line bg-bg2">
+            {post.imageUrl ? (
+              <img src={post.imageUrl} alt={post.title} class="h-full w-full object-cover" />
+            ) : (
+              <>
+                <svg class="absolute inset-0 h-full w-full opacity-15" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <pattern id="article-hero-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+                      <circle cx="14" cy="14" r="1" fill="#C4974E" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#article-hero-pattern)" />
+                </svg>
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(221,185,106,0.2),transparent_60%)]"></div>
+              </>
+            )}
+          </div>
+        </header>
+
+        <div class="max-w-3xl pt-10 md:pt-12">
+          {Content ? (
+            <div class="prose prose-blog prose-invert max-w-none prose-headings:font-serif prose-headings:font-light prose-a:no-underline prose-a:hover:text-accent prose-strong:font-medium prose-li:marker:text-accent prose-hr:border-line prose-blockquote:rounded-none">
+              <Content />
+            </div>
+          ) : post.body ? (
+            <div class="prose prose-blog prose-invert max-w-none prose-headings:font-serif prose-headings:font-light prose-a:no-underline prose-a:hover:text-accent prose-strong:font-medium prose-li:marker:text-accent prose-hr:border-line prose-blockquote:rounded-none">
+              <p>{post.body}</p>
+            </div>
+          ) : (
+            <p class="font-sans text-muted">Este articulo aun no tiene contenido disponible.</p>
+          )}
+        </div>
+      </div>
+    </article>
+
+    <section class="py-10 md:py-12 border-t border-line">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <h2 class="font-serif text-2xl md:text-3xl font-light text-text mb-8">Más artículos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {recommendedPosts.map((recommended) => (
+            <ArticuloCard post={recommended} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-12">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="border border-accent/40 bg-bg2 p-8 md:p-10">
+          <h3 class="font-serif text-2xl md:text-3xl font-light text-text">
+            ¿Querés profundizar en esto con tu equipo?
+          </h3>
+          <a
+            href="/#contacto"
+            class="mt-6 inline-flex items-center border border-accent px-6 py-3 font-sans text-sm font-light text-accent hover:bg-accent hover:text-bg transition-colors duration-300"
+          >
+            Hablemos
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BlogLayout>
+

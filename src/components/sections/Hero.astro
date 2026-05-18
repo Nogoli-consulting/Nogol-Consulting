@@ -1,0 +1,135 @@
+---
+---
+
+<section id="inicio" class="relative min-h-screen flex items-center overflow-hidden pt-20 bg-cream">
+
+
+  <!-- Diagonal pattern (encima del overlay) -->
+  <div class="absolute inset-0 pointer-events-none" style="z-index: 2; background-image: url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239e6a28' fill-opacity='0.06'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");"></div>
+  <!-- Radial glows -->
+  <div class="absolute inset-0 pointer-events-none" style="z-index: 2;">
+    <div class="absolute top-1/3 right-0 w-md h-112 rounded-full" style="background: radial-gradient(circle, rgba(211,153,69,0.10) 0%, transparent 70%);"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-72 h-72 rounded-full" style="background: radial-gradient(circle, rgba(211,153,69,0.07) 0%, transparent 70%);"></div>
+  </div>
+
+  <div class="relative max-w-6xl mx-auto px-6 lg:px-8 w-full pt-16 pb-10 lg:py-24 flex flex-col lg:grid lg:grid-cols-[55%_45%] lg:gap-12 lg:items-center" style="z-index: 3;">
+
+    <!-- 1 · Title + Subtitle + CTAs -->
+    <div class="flex flex-col gap-8 lg:gap-10">
+
+      <!-- Headline -->
+      <div class="flex flex-col gap-4">
+        <h1 class="reveal font-serif" style="color: #210c04; font-size: clamp(42px, 6vw, 72px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 900;">
+          Orden,<br />Sin burocracia
+        </h1>
+        <div class="reveal" style="width: 48px; height: 3px; background: var(--accent);"></div>
+      </div>
+
+      <!-- Subheading -->
+      <div class="reveal reveal-delay-1 max-w-md">
+        <p class="font-sans text-lg md:text-xl font-semibold leading-snug" style="color: rgba(33,12,4,0.85);">
+          ¿Cansado de que el día a día no te deje liderar tu empresa?
+        </p>
+      </div>
+
+      <p class="reveal reveal-delay-2 font-sans text-base font-light leading-loose max-w-md" style="color: rgba(33,12,4,0.80);">Entrenamos a tu empresa para construir un sistema en el que puedas confiar: procesos simples, roles claros y expectativas concretas que se sostienen en el trabajo cotidiano.</p>
+
+      <p class="reveal reveal-delay-3 font-sans text-base font-light leading-loose max-w-md" style="color: rgba(33,12,4,0.80);">Así liberamos el tiempo de la dirección para que vuelva a enfocarse en lo que nadie más puede hacer: pensar el futuro de la empresa.</p>
+
+      <!-- CTAs (desktop only — mobile version is below the photo) -->
+      <div class="reveal reveal-delay-2 hidden lg:flex flex-wrap gap-4 items-center">
+        <!-- TODO: replace Calendly URL with real link from client -->
+        <a
+          href="https://calendly.com/nogoli"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-shimmer inline-flex items-center gap-2 px-8 py-4 font-sans text-sm font-medium tracking-wide transition-colors duration-300"
+          style="background: #D39945; color: #240F07;"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+            <line x1="16" x2="16" y1="2" y2="6"/>
+            <line x1="8" x2="8" y1="2" y2="6"/>
+            <line x1="3" x2="21" y1="10" y2="10"/>
+          </svg>
+          Agendá tu charla de 20 minutos
+        </a>
+        <a
+          href="https://wa.me/5491130855891?text=Hola%20Sergio%2C%20te%20contacto%20desde%20tu%20web.%20Me%20gustar%C3%ADa%20agendar%20una%20charla%20para%20ver%20c%C3%B3mo%20pod%C3%A9s%20ayudarme%20a%20ordenar%20la%20operaci%C3%B3n%20de%20mi%20empresa."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-8 py-4 font-sans text-sm font-medium tracking-wide border transition-all duration-300" style="color: #210c04; border-color: rgba(33,12,4,0.40);" onmouseover="this.style.background='rgba(33,12,4,0.06)'" onmouseout="this.style.background=''"
+        >
+          Hablemos
+        </a>
+        <a
+          href="#metodo"
+          class="inline-flex items-center gap-2 px-8 py-4 font-sans text-sm font-light tracking-wide border transition-all duration-300" style="color: #210c04; border-color: rgba(33,12,4,0.40);" onmouseover="this.style.background='rgba(33,12,4,0.06)'" onmouseout="this.style.background=''"
+        >
+          Conocé el Método
+        </a>
+      </div>
+
+    </div>
+
+    <!-- 2 · Foto -->
+    <div class="reveal reveal-delay-1 relative flex justify-center lg:justify-end lg:self-stretch mt-10 lg:mt-0">
+      <div class="relative w-full max-w-sm lg:max-w-none lg:w-full overflow-hidden">
+        <!-- Hero image -->
+        <div class="relative z-10 w-full overflow-hidden bg-bg2" style="aspect-ratio: 3/4; min-height: 420px; max-height: 680px;">
+          <img
+            src="/imagenes/perfil/sergio6.jpg"
+            alt="Sergio Martín Celuch — Nogolí Consulting"
+            class="w-full h-full object-cover object-top"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="840"
+            height="1050"
+          />
+          <!-- Warm tint overlay -->
+          <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(33,12,4,0.18) 0%, transparent 35%), linear-gradient(to top, rgba(255,245,236,0.12) 0%, transparent 40%);"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTAs (mobile only — shown below photo) -->
+    <div class="lg:hidden reveal reveal-delay-2 flex flex-col gap-3 mt-8">
+        <!-- TODO: replace Calendly URL with real link from client -->
+        <a
+          href="https://calendly.com/nogoli"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-shimmer flex justify-center items-center gap-2 px-4 py-4 font-sans text-sm font-medium tracking-wide transition-colors duration-300"
+          style="background: #D39945; color: #240F07;"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+            <line x1="16" x2="16" y1="2" y2="6"/>
+            <line x1="8" x2="8" y1="2" y2="6"/>
+            <line x1="3" x2="21" y1="10" y2="10"/>
+          </svg>
+          Agendá tu charla de 20 minutos
+        </a>
+        <div class="flex gap-3">
+          <a
+            href="https://wa.me/5491130855891?text=Hola%20Sergio%2C%20te%20contacto%20desde%20tu%20web.%20Me%20gustar%C3%ADa%20agendar%20una%20charla%20para%20ver%20c%C3%B3mo%20pod%C3%A9s%20ayudarme%20a%20ordenar%20la%20operaci%C3%B3n%20de%20mi%20empresa."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 flex justify-center items-center gap-2 px-4 py-4 bg-gold-dark text-cream font-sans text-sm font-medium tracking-wide hover:bg-accent transition-colors duration-300"
+          >
+            Hablemos
+          </a>
+          <a
+            href="#metodo"
+            class="flex-1 flex justify-center items-center gap-2 px-4 py-4 font-sans text-sm font-light tracking-wide border transition-all duration-300" style="color: #210c04; border-color: rgba(33,12,4,0.40);" onmouseover="this.style.background='rgba(33,12,4,0.06)'" onmouseout="this.style.background=''"
+          >
+            Conocé el Método
+          </a>
+        </div>
+      </div>
+
+  </div>
+
+
+</section>

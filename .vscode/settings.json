@@ -1,0 +1,19 @@
+{
+  // Desactiva el validador de CSS nativo de VS Code para que no marque
+  // como error las directivas propias de Tailwind v4 (@source, @theme, etc.)
+  "css.validate": false,
+  "scss.validate": false,
+
+  // El linter de Tailwind CSS IntelliSense reemplaza al nativo
+  "tailwindCSS.validate": true,
+
+  // Que IntelliSense de Tailwind escanee también los .astro
+  "tailwindCSS.includeLanguages": {
+    "astro": "html"
+  },
+
+  // Asocia archivos .astro al servidor de idioma de Astro (por si acaso)
+  "files.associations": {
+    "*.astro": "astro"
+  }
+}

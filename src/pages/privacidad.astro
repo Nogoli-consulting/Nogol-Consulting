@@ -1,0 +1,315 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/layout/Footer.astro';
+import { siteConfig } from '../data/siteConfig';
+---
+
+<Layout
+  title="Política de Privacidad — Nogolí Consulting"
+  description="Política de privacidad y tratamiento de datos personales de Nogolí Consulting, conforme a la Ley 25.326 de Protección de Datos Personales de la República Argentina."
+  noIndex={false}
+>
+  <!-- Simple navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-md border-b border-line overflow-hidden" style="height: 80px;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 overflow-hidden" style="max-height: 40px;">
+        <img
+          src="/imagenes/logo/nuevologonog.svg"
+          alt="Nogolí Consulting"
+          class="shrink-0 object-contain"
+          style="width: 36px; height: 36px; max-width: 36px; max-height: 36px;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+        />
+        <span class="font-serif text-espresso hidden" style="font-size: 18px; font-weight: 700;">Nogolí Consulting</span>
+      </a>
+      <a
+        href="/"
+        class="font-sans text-sm font-light hover:text-accent transition-colors flex items-center gap-2" style="color: var(--dark-mid);"
+      >
+        ← Volver al inicio
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="pt-20 bg-cream min-h-screen">
+
+    <!-- Header -->
+    <section class="bg-cream py-20 md:py-28 border-b border-line">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8">
+        <div class="eyebrow mb-6">Información legal</div>
+        <h1 class="font-serif text-espresso mb-6" style="font-size: clamp(36px, 5vw, 60px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 900;">
+          Política de Privacidad.
+        </h1>
+        <p class="font-sans text-base font-light leading-loose" style="color: var(--dark-mid);">
+          Última actualización: {new Date().toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8">
+
+        <div class="flex flex-col gap-12 font-sans font-light leading-loose" style="font-size: 16px; color: var(--dark-mid);">
+
+          <!-- Intro -->
+          <div class="flex flex-col gap-4">
+            <p>
+              <strong class="font-medium text-espresso">Nogolí Consulting</strong>, cuyo responsable es
+              <strong class="font-medium text-espresso">{siteConfig.founder}</strong> (en adelante, "Nogolí Consulting",
+              "nosotros" o "el Responsable"), es titular del sitio web{' '}
+              <a href="/" class="text-accent hover:text-accent2 transition-colors">nogoli-consulting.com</a>{' '}
+              (en adelante, "el Sitio").
+            </p>
+            <p>
+              La presente Política de Privacidad tiene por objeto informar a los usuarios del Sitio
+              sobre el tratamiento de sus datos personales, en cumplimiento de la
+              <strong class="font-medium text-espresso">Ley N° 25.326 de Protección de Datos Personales</strong>{' '}
+              de la República Argentina y su normativa reglamentaria.
+            </p>
+            <p>
+              Al utilizar el Sitio y/o completar el formulario de contacto, el usuario acepta los
+              términos de esta Política.
+            </p>
+          </div>
+
+          <div class="h-px bg-line"></div>
+
+          <!-- 1 -->
+          <div class="flex flex-col gap-4">
+            <h2 class="font-serif text-espresso font-bold" style="font-size: clamp(20px, 2.5vw, 26px);">
+              1. Datos que recopilamos
+            </h2>
+            <p>
+              A través del formulario de contacto disponible en el Sitio, recopilamos los siguientes
+              datos personales:
+            </p>
+            <ul class="flex flex-col gap-2 pl-5 list-none">
+              {[
+                'Nombre y apellido (requerido)',
+                'Nombre de la empresa u organización (opcional)',
+                'Dirección de correo electrónico (requerido)',
+                'Servicio de interés (requerido)',
+                'Mensaje libre (requerido)',
+              ].map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p>
+              El Sitio no utiliza <em>cookies</em> de rastreo, herramientas de análisis de terceros
+              (Google Analytics u otras) ni tecnologías de seguimiento que recopilen datos de
+              navegación del usuario de forma automática, más allá de los propios del servidor
+              de hosting.
+            </p>
+          </div>
+
+          <div class="h-px bg-line"></div>
+
+          <!-- 2 -->
+          <div class="flex flex-col gap-4">
+            <h2 class="font-serif text-espresso font-bold" style="font-size: clamp(20px, 2.5vw, 26px);">
+              2. Finalidad del tratamiento
+            </h2>
+            <p>Los datos personales que el usuario proporciona son utilizados exclusivamente para:</p>
+            <ul class="flex flex-col gap-2 pl-5 list-none">
+              {[
+                'Responder a consultas o solicitudes enviadas a través del formulario de contacto.',
+                'Evaluar el tipo de servicio que puede resultar útil para el usuario.',
+                'Establecer comunicación comercial inicial a solicitud expresa del usuario.',
+              ].map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p>
+              En ningún caso los datos serán utilizados para envíos masivos de comunicaciones
+              comerciales no solicitadas (spam), ni cedidos a terceros con fines publicitarios.
+            </p>
+          </div>
+
+          <div class="h-px bg-line"></div>
+
+          <!-- 3 -->
+          <div class="flex flex-col gap-4">
+            <h2 class="font-serif text-espresso font-bold" style="font-size: clamp(20px, 2.5vw, 26px);">
+              3. Base legal del tratamiento
+            </h2>
+            <p>
+              El tratamiento de los datos personales se realiza sobre la base del
+              <strong class="font-medium text-espresso">consentimiento libre, expreso e informado</strong>{' '}
+              del titular, manifestado al completar y enviar el formulario de contacto, conforme al
+              artículo 5 de la Ley 25.326.
+            </p>
+          </div>
+
+          <div class="h-px bg-line"></div>
+
+          <!-- 4 -->
+          <div class="flex flex-col gap-4">
+            <h2 class="font-serif text-espresso font-bold" style="font-size: clamp(20px, 2.5vw, 26px);">
+              4. Almacenamiento y seguridad
+            </h2>
+            <p>
+              Los datos recibidos a través del formulario son gestionados directamente por el
+              Responsable a través de comunicaciones de correo electrónico. No se almacenan en
+              bases de datos públicas ni se comparten con plataformas externas de
+              <em>marketing</em> o CRM sin consentimiento adicional del titular.
+            </p>
+            <p>
+              Nogolí Consulting adopta medidas técnicas y organizativas razonables para proteger
+              la confidencialidad e integridad de los datos personales frente a accesos no
+              autorizados, pérdida o divulgación indebida.
+            </p>
+          </div>
+
+          <div class="h-px bg-line"></div>
+
+          <!-- 5 -->
+          <div class="flex flex-col gap-4">
+            <h2 class="font-serif text-espresso font-bold" style="font-size: clamp(20px, 2.5vw, 26px);">
+              5. Derechos del titular
+            </h2>
+            <p>
+              De conformidad con los artículos 14 a 16 de la Ley 25.326, el titular de los datos
+              personales tiene derecho a:
+            </p>
+            <ul class="flex flex-col gap-2 pl-5 list-none">
+              {[
+                'Acceder gratuitamente a sus datos personales en poder del Responsable.',
+                'Solicitar la rectificación de datos inexactos o incompletos.',
+                'Solicitar la supresión ("derecho al olvido") de sus datos, cuando no exista obligación legal de conservarlos.',
+                'Revocar el consentimiento otorgado en cualquier momento.',
+                'Oponerse al tratamiento de sus datos con fines específicos.',
+              ].map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p>
+              Para ejercer cualquiera de estos derechos, el titular puede dirigirse al Responsable
+              por correo electrónico a{' '}
+              <a href={`mailto:${siteConfig.email}`} class="text-accent hover:text-accent2 transition-colors">
+                {siteConfig.email}
+              </a>
+              , indicando en el asunto "Protección de Datos Personales" y acreditando su identidad.
+            </p>
+            <p class="text-sm" style="color: rgba(33,12,4,0.45);">
+              La Agencia de Acceso a la Información Pública (AAIP), en su carácter de Órgano de
+              Control de la Ley 25.326, tiene la atribución de atender las denuncias y reclamos
+              que interpongan quienes resulten afectados en sus derechos.
+            </p>
+          </div>
+
+          <div class="h-px bg-line"></div>
+
+          <!-- 6 -->
+          <div class="flex flex-col gap-4">
+            <h2 class="font-serif text-espresso font-bold" style="font-size: clamp(20px, 2.5vw, 26px);">
+              6. Cookies
+            </h2>
+            <p>
+              El Sitio no utiliza <em>cookies</em> de seguimiento, publicidad o analítica de
+              terceros. El navegador del usuario puede utilizar <em>cookies</em> técnicas propias
+              para el correcto funcionamiento de la interfaz (por ejemplo, para preservar
+              preferencias de sesión), pero estas no almacenan datos personales identificables.
+            </p>
+          </div>
+
+          <div class="h-px bg-line"></div>
+
+          <!-- 7 -->
+          <div class="flex flex-col gap-4">
+            <h2 class="font-serif text-espresso font-bold" style="font-size: clamp(20px, 2.5vw, 26px);">
+              7. Transferencia internacional de datos
+            </h2>
+            <p>
+              Los datos personales de los usuarios no son transferidos a destinatarios ubicados
+              fuera de la República Argentina, salvo que el servicio de hosting o infraestructura
+              del Sitio opere en servidores externos. En ese caso, se adoptarán las medidas de
+              resguardo previstas en la normativa vigente.
+            </p>
+          </div>
+
+          <div class="h-px bg-line"></div>
+
+          <!-- 8 -->
+          <div class="flex flex-col gap-4">
+            <h2 class="font-serif text-espresso font-bold" style="font-size: clamp(20px, 2.5vw, 26px);">
+              8. Conservación de datos
+            </h2>
+            <p>
+              Los datos personales serán conservados durante el tiempo necesario para dar respuesta
+              a la consulta realizada y, posteriormente, por el período que exija la normativa
+              fiscal y comercial aplicable, o hasta que el titular solicite su supresión.
+            </p>
+          </div>
+
+          <div class="h-px bg-line"></div>
+
+          <!-- 9 -->
+          <div class="flex flex-col gap-4">
+            <h2 class="font-serif text-espresso font-bold" style="font-size: clamp(20px, 2.5vw, 26px);">
+              9. Modificaciones a esta Política
+            </h2>
+            <p>
+              Nogolí Consulting se reserva el derecho de actualizar esta Política de Privacidad en
+              cualquier momento. Las modificaciones serán publicadas en esta misma página con la
+              fecha de actualización correspondiente. Se recomienda revisarla periódicamente.
+            </p>
+          </div>
+
+          <div class="h-px bg-line"></div>
+
+          <!-- 10 -->
+          <div class="flex flex-col gap-4">
+            <h2 class="font-serif text-espresso font-bold" style="font-size: clamp(20px, 2.5vw, 26px);">
+              10. Contacto
+            </h2>
+            <p>
+              Para cualquier consulta relacionada con esta Política o con el tratamiento de datos
+              personales, podés comunicarte con:
+            </p>
+            <div class="p-6 border border-line bg-cream-mid flex flex-col gap-2">
+              <p class="font-medium text-espresso">{siteConfig.name}</p>
+              <p>Responsable: {siteConfig.founder}</p>
+              <p>
+                Email:{' '}
+                <a href={`mailto:${siteConfig.email}`} class="text-accent hover:text-accent2 transition-colors">
+                  {siteConfig.email}
+                </a>
+              </p>
+              <p>
+                WhatsApp:{' '}
+                <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer" class="text-accent hover:text-accent2 transition-colors">
+                  {siteConfig.whatsappDisplay}
+                </a>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-line">
+          <a
+            href="/"
+            class="inline-flex items-center gap-2 font-sans text-sm font-light hover:text-accent transition-colors" style="color: var(--dark-mid);"
+          >
+            ← Volver al inicio
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,93 @@
+---
+import { siteConfig } from '../data/siteConfig';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  noIndex?: boolean;
+}
+
+const {
+  title = `Artículos — Nogolí Consulting`,
+  description = 'Reflexiones prácticas sobre gestión operacional, liderazgo y coordinación para equipos y organizaciones que quieren crecer con orden.',
+  ogImage = '/og-image.jpg',
+  noIndex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://nogoliconsulting.com');
+const ogImageAbsolute = new URL(ogImage, canonicalURL.origin).href;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- ═══════════════════════════════════════════
+         CANONICAL & ROBOTS
+    ═══════════════════════════════════════════ -->
+    <link rel="canonical" href={canonicalURL.href} />
+    {noIndex
+      ? <meta name="robots" content="noindex, nofollow" />
+      : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    }
+
+    <!-- ═══════════════════════════════════════════
+         SEO BÁSICO
+    ═══════════════════════════════════════════ -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={siteConfig.founder} />
+    <meta name="keywords" content="consultoría operacional Argentina, gestión operacional PyMEs, Sergio Martín Celuch, Nogolí Consulting, artículos gestión empresarial, liderazgo, procesos, sprint organizacional, Buenos Aires" />
+
+    <!-- ═══════════════════════════════════════════
+         OPEN GRAPH
+    ═══════════════════════════════════════════ -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageAbsolute} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${siteConfig.name} — ${siteConfig.tagline}`} />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <!-- ═══════════════════════════════════════════
+         TWITTER / X CARDS
+    ═══════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageAbsolute} />
+    <meta name="twitter:image:alt" content={`${siteConfig.name} — ${siteConfig.tagline}`} />
+
+    <!-- ═══════════════════════════════════════════
+         FAVICONS
+    ═══════════════════════════════════════════ -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#FAF3E4" />
+    <meta name="msapplication-TileColor" content="#d39945" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

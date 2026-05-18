@@ -1,0 +1,138 @@
+﻿---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import Navbar from '../../components/layout/Navbar.astro';
+import Footer from '../../components/layout/Footer.astro';
+import ArticuloCard from '../../components/ArticuloCard.astro';
+import { getAllPosts } from '../../lib/posts';
+
+const posts = await getAllPosts();
+---
+
+<BlogLayout
+  title="Artículos sobre estrategia empresarial — Nogolí Consulting"
+  description="Reflexiones prácticas sobre estrategia, liderazgo y gestión para equipos y organizaciones que quieren crecer con foco."
+>
+  <Navbar />
+
+  <main class="bg-cream min-h-screen pt-24">
+    <section class="border-b bg-cream-mid" style="border-color: rgba(211,153,69,0.22);">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 py-20 md:py-24">
+        <div class="eyebrow mb-6">Ideas y perspectivas</div>
+        <h1 class="max-w-4xl font-serif text-espresso" style="font-size: clamp(40px, 6vw, 72px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 900;">
+          Artículos sobre estrategia empresarial
+        </h1>
+        <p class="mt-8 max-w-3xl font-sans text-base md:text-lg font-normal md:font-light leading-relaxed" style="color: var(--dark-mid);">
+          Reflexiones prácticas sobre estrategia, liderazgo y gestión
+          para equipos y organizaciones que quieren crecer con foco.
+        </p>
+        <div class="mt-12 h-px w-full" style="background: rgba(211,153,69,0.22);"></div>
+      </div>
+    </section>
+
+    <section class="py-8 md:py-10 border-b bg-cream" style="border-color: rgba(211,153,69,0.22);">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="flex flex-wrap items-center gap-3" data-filter-group>
+          <button type="button" data-filter="Todos" class="rounded-none border px-4 py-2 text-xs tracking-[0.18em] uppercase transition-colors duration-200 border-gold-dark text-gold-dark" style="background: rgba(211,153,69,0.12);">Todos</button>
+          <button type="button" data-filter="Estrategia" class="rounded-none border px-4 py-2 text-xs tracking-[0.18em] uppercase transition-colors duration-200 text-espresso hover:border-gold-dark hover:text-gold-dark" style="border-color: rgba(211,153,69,0.35);">Estrategia</button>
+          <button type="button" data-filter="Gestión" class="rounded-none border px-4 py-2 text-xs tracking-[0.18em] uppercase transition-colors duration-200 text-espresso hover:border-gold-dark hover:text-gold-dark" style="border-color: rgba(211,153,69,0.35);">Gestión</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 md:py-14 bg-cream">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-posts-grid>
+          {posts.map((post, index) => (
+            <ArticuloCard post={post} cardIndex={index} hidden={index >= 9} />
+          ))}
+        </div>
+
+        <div class="mt-12 flex justify-center">
+          <button
+            type="button"
+            data-load-more
+            class="border px-6 py-3 font-sans text-sm font-medium transition-colors duration-300 hover:text-cream"
+            style="border-color: var(--accent); color: var(--accent);"
+            onmouseenter="this.style.background='var(--accent)'; this.style.color='var(--cream)'"
+            onmouseleave="this.style.background='transparent'; this.style.color='var(--accent)'"
+          >
+            Cargar más
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = Array.from(document.querySelectorAll('[data-post-card]'));
+      const filterButtons = Array.from(document.querySelectorAll('[data-filter]'));
+      const loadMoreButton = document.querySelector('[data-load-more]');
+
+      if (!cards.length || !filterButtons.length || !loadMoreButton) return;
+
+      const normalize = (value) =>
+        value
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '');
+
+      const pageSize = 9;
+      let activeFilter = 'Todos';
+      let visibleCount = pageSize;
+
+      const updateFilterButtons = () => {
+        filterButtons.forEach((button) => {
+          const isActive = button.dataset.filter === activeFilter;
+          button.style.background = isActive ? 'rgba(211,153,69,0.12)' : 'transparent';
+          button.style.borderColor = isActive ? 'var(--accent)' : 'rgba(211,153,69,0.35)';
+          button.style.color = isActive ? 'var(--gold-dark)' : 'var(--espresso)';
+        });
+      };
+
+      const applyState = () => {
+        let totalMatches = 0;
+        let visibleMatches = 0;
+
+        cards.forEach((card) => {
+          const category = card.dataset.category || '';
+          const matchesFilter =
+            activeFilter === 'Todos' || normalize(category) === normalize(activeFilter);
+
+          if (matchesFilter) {
+            totalMatches += 1;
+            const shouldShow = visibleMatches < visibleCount;
+            card.classList.toggle('hidden', !shouldShow);
+            if (shouldShow) {
+              visibleMatches += 1;
+            }
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        loadMoreButton.classList.toggle('hidden', visibleCount >= totalMatches);
+      };
+
+      filterButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          activeFilter = button.dataset.filter || 'Todos';
+          visibleCount = pageSize;
+          updateFilterButtons();
+          applyState();
+        });
+      });
+
+      loadMoreButton.addEventListener('click', () => {
+        visibleCount += pageSize;
+        applyState();
+      });
+
+      updateFilterButtons();
+      applyState();
+    });
+  </script>
+</BlogLayout>
+

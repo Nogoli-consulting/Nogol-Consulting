@@ -1,0 +1,91 @@
+---
+---
+
+<section id="sprint" class="bg-gold-dark py-28 md:py-40">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="flex flex-col gap-5 mb-16 max-w-3xl">
+      <div class="reveal eyebrow" style="color: var(--espresso);">Metodología principal</div>
+      <h2 class="reveal reveal-delay-1 font-serif text-text" style="font-size: clamp(36px, 5vw, 56px); line-height: 1.15; letter-spacing: -0.01em;">
+        Sprint Organizacional
+      </h2>
+      <p class="reveal reveal-delay-2 font-sans text-base md:text-lg font-light max-w-2xl leading-loose" style="color: rgba(250,243,228,0.90);">
+        El punto de entrada para ordenar la operación sin sumar burocracia.
+        Un proceso intensivo y orientado a resultados que genera cambio real en semanas, no en meses.
+      </p>
+    </div>
+
+    <!-- 2-column layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+      <!-- Left: Qué incluye el Sprint I -->
+      <div class="reveal reveal-delay-2 p-6 lg:p-10 flex flex-col gap-8" style="background: rgba(33,12,4,0.12); border: 1px solid rgba(250,243,228,0.20);">
+        <div class="flex flex-col gap-2">
+          <span class="font-sans text-[10px] font-medium uppercase tracking-[0.18em]" style="color: var(--espresso);">Sprint I</span>
+          <h3 class="font-serif text-xl font-bold text-text">
+            Qué incluye
+          </h3>
+        </div>
+
+        <ul class="flex flex-col gap-5">
+          {[
+            'Orden y ejecución para reducir la dependencia del dueño, CEO o gerentes.',
+            'Mapeo de procesos críticos de la operación.',
+            'Tablero de compromisos: qué, quién, cuándo — con rutinas de organización.',
+          ].map((item) => (
+            <li class="flex items-start gap-4">
+              <span class="font-serif font-bold text-text shrink-0 mt-0.5" style="font-size: 18px; line-height: 1.2;">→</span>
+              <span class="font-sans text-sm font-light text-text leading-relaxed" style="opacity: 0.90;">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <!-- Outcome pill -->
+        <div class="mt-auto pt-6" style="border-top: 1px solid rgba(250,243,228,0.20);">
+          <p class="font-serif italic text-sm" style="color: rgba(250,243,228,0.90);">
+            "Una organización que ejecuta sin depender siempre de las mismas personas."
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Siguientes pasos posibles -->
+      <div class="reveal reveal-delay-3 p-6 lg:p-10 flex flex-col gap-8" style="background: rgba(33,12,4,0.12); border: 1px solid rgba(250,243,228,0.20);">
+        <div class="flex flex-col gap-2">
+          <span class="font-sans text-[10px] font-medium uppercase tracking-[0.18em]" style="color: var(--espresso);">Continuidad</span>
+          <h3 class="font-serif text-xl font-bold text-text">
+            Siguientes pasos posibles
+          </h3>
+        </div>
+
+        <ul class="flex flex-col gap-5">
+          {[
+            { step: 'Sprint II', desc: 'Profundización y consolidación del sistema de gestión.' },
+            { step: 'Estrategia (Nivel I al III)', desc: 'Definición del norte estratégico y traducción a objetivos.' },
+            { step: 'Sistema ISO 9001 vivo', desc: 'Implementación usable, no un cajón de documentos.' },
+            { step: 'Mentorías personalizadas', desc: 'Acompañamiento continuo al líder o equipo directivo.' },
+          ].map(({ step, desc }) => (
+            <li class="flex items-start gap-4">
+              <span class="font-serif font-bold text-text shrink-0 mt-0.5" style="font-size: 18px; line-height: 1.2;">→</span>
+              <div class="flex flex-col gap-0.5">
+                <span class="font-sans text-sm font-medium text-text">{step}</span>
+                <span class="font-sans text-sm font-light leading-relaxed" style="color: rgba(250,243,228,0.85);">{desc}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <!-- CTA -->
+        <div class="mt-auto pt-6" style="border-top: 1px solid rgba(250,243,228,0.20);">
+          <a
+            href="#contacto"
+            class="inline-flex items-center gap-2 font-sans text-sm font-medium text-text hover:text-cream transition-colors"
+          >
+            Hablemos sobre tu organización →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

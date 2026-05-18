@@ -1,0 +1,49 @@
+---
+const stats = [
+  {
+    numero: '–40%',
+    descripcion: 'de reuniones operativas',
+    contexto: 'Industria alimentaria · 8 semanas',
+  },
+  {
+    numero: '3x',
+    descripcion: 'más capacidad de entrega del equipo',
+    contexto: 'Empresa de servicios · 2024',
+  },
+  {
+    numero: '+60%',
+    descripcion: 'de tiempo directivo liberado',
+    contexto: 'PyME industrial · 6 semanas',
+  },
+];
+---
+
+<section id="resultados" class="bg-cream-mid py-28 md:py-40">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <!-- Header -->
+    <div class="flex flex-col gap-5 mb-16 md:text-center">
+      <h2 class="reveal reveal-delay-1 font-serif text-espresso" style="font-size: clamp(36px, 5vw, 52px); line-height: 1.2; letter-spacing: -0.01em;">
+        Resultados concretos, no promesas.
+      </h2>
+      <p class="reveal reveal-delay-2 font-sans text-base font-semibold leading-snug max-w-xl md:mx-auto" style="color: var(--espresso);">
+        Lo que cambia cuando tu empresa empieza a funcionar con un sistema
+      </p>
+    </div>
+
+    <!-- Stats grid -->
+    <div class="reveal reveal-delay-2 grid grid-cols-1 sm:grid-cols-3 gap-px bg-line mb-16">
+      {stats.map((s) => (
+        <div class="bg-bg p-8 lg:p-10 flex flex-col gap-3" style="border: 1px solid rgba(211,153,69,0.20);">
+          <p
+            class="font-serif font-black leading-none"
+            style="font-size: clamp(48px, 6vw, 72px); color: #D39945;"
+          >
+            {s.numero}
+          </p>
+          <p class="font-sans text-base font-semibold leading-snug" style="color: #FAF3E4;">{s.descripcion}</p>
+          <p class="font-sans text-xs font-normal leading-snug" style="color: rgba(250,243,228,0.55);">{s.contexto}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
