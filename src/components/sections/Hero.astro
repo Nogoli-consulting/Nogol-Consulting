@@ -37,7 +37,43 @@
     <div class="reveal reveal-delay-2 flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between gap-6 mt-8">
 
       <!-- CTAs -->
-      <div class="flex flex-wrap gap-4 items-center">
+      <!-- Mobile CTA layout: top button full-width, bottom two side-by-side -->
+      <div class="flex flex-col gap-3 w-full lg:hidden">
+        <a
+          href="https://calendly.com/nogoli"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-shimmer w-full flex justify-center items-center gap-2 px-8 py-4 font-sans text-sm font-medium tracking-wide transition-colors duration-300"
+          style="background: #D39945; color: #240F07;"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+            <line x1="16" x2="16" y1="2" y2="6"/>
+            <line x1="8" x2="8" y1="2" y2="6"/>
+            <line x1="3" x2="21" y1="10" y2="10"/>
+          </svg>
+          Agendá tu charla de 20 minutos
+        </a>
+        <div class="flex gap-3">
+          <a
+            href="https://wa.me/5491130855891?text=Hola%20Sergio%2C%20te%20contacto%20desde%20tu%20web.%20Me%20gustar%C3%ADa%20agendar%20una%20charla%20para%20ver%20c%C3%B3mo%20pod%C3%A9s%20ayudarme%20a%20ordenar%20la%20operaci%C3%B3n%20de%20mi%20empresa."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 flex justify-center items-center gap-2 px-4 py-4 font-sans text-xs font-medium tracking-wide border transition-all duration-300 whitespace-nowrap" style="color: #210c04; border-color: rgba(33,12,4,0.40); min-height: 48px;" onmouseover="this.style.background='rgba(33,12,4,0.06)'" onmouseout="this.style.background=''"
+          >
+            Hablemos
+          </a>
+          <a
+            href="#metodo"
+            class="flex-1 flex justify-center items-center gap-2 px-4 py-4 font-sans text-xs font-light tracking-wide border transition-all duration-300 whitespace-nowrap" style="color: #210c04; border-color: rgba(33,12,4,0.40); min-height: 48px;" onmouseover="this.style.background='rgba(33,12,4,0.06)'" onmouseout="this.style.background=''"
+          >
+            Conocé el Método
+          </a>
+        </div>
+      </div>
+
+      <!-- Desktop CTA layout: unchanged -->
+      <div class="hidden lg:flex flex-wrap gap-4 items-center">
         <!-- TODO: replace Calendly URL with real link from client -->
         <a
           href="https://calendly.com/nogoli"

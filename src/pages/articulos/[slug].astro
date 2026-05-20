@@ -4,7 +4,6 @@ import { PortableText } from '@portabletext/react';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import Navbar from '../../components/layout/Navbar.astro';
 import Footer from '../../components/layout/Footer.astro';
-import ArticuloCard from '../../components/ArticuloCard.astro';
 import { getAllPosts, getPostBySlug } from '../../lib/posts';
 
 export async function getStaticPaths() {
@@ -24,15 +23,6 @@ if (!post) {
 const markdownEntry = await getEntry('articulos', post.slug);
 const rendered = markdownEntry ? await render(markdownEntry) : null;
 const Content = rendered?.Content;
-
-const allPosts = await getAllPosts();
-const relatedPosts = allPosts
-  .filter((candidate) => candidate.slug !== post.slug && candidate.category === post.category)
-  .slice(0, 2);
-const fallbackRelated = allPosts
-  .filter((candidate) => candidate.slug !== post.slug)
-  .slice(0, 2);
-const recommendedPosts = (relatedPosts.length ? relatedPosts : fallbackRelated).slice(0, 2);
 
 function formatDate(date: Date) {
   return new Intl.DateTimeFormat('es-AR', {
@@ -151,36 +141,33 @@ const schemaData = {
           ) : (
             <p class="font-sans text-muted">Este articulo aun no tiene contenido disponible.</p>
           )}
+
+          <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(211,153,69,0.30); display: flex; gap: 1rem; align-items: flex-start;">
+            <img
+              src="/imagenes/perfil/sergio6.jpg"
+              alt="Sergio Martín Celuch"
+              style="width: 64px; height: 64px; border-radius: 4px; object-fit: cover; object-position: center 15%; flex-shrink: 0;"
+            />
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <span class="font-serif font-bold" style="font-size: 18px; color: #240F07;">Sergio Martín Celuch</span>
+              <span class="font-sans font-normal text-sm" style="color: rgba(33,12,4,0.55);">Founder · Nogolí Consulting</span>
+              <p class="font-sans font-normal text-sm" style="color: rgba(33,12,4,0.75); line-height: 1.7; margin-top: 4px;">
+                Ayudo a empresas a ordenar su ejecución y crecer sin sumar burocracia. Si este artículo te resultó útil, me podés escribir directamente.
+              </p>
+              <a
+                href="https://wa.me/5491130855891"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-sans font-semibold text-sm transition-colors duration-200 hover:text-espresso"
+                style="color: #D39945; margin-top: 8px; display: inline-block;"
+              >
+                → Hablemos por WhatsApp
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </article>
-
-    <section class="py-10 md:py-12 border-t border-line">
-      <div class="max-w-6xl mx-auto px-6 lg:px-8">
-        <h2 class="font-serif text-2xl md:text-3xl font-light text-espresso mb-8">Más artículos</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {recommendedPosts.map((recommended) => (
-            <ArticuloCard post={recommended} />
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="py-10 md:py-12">
-      <div class="max-w-6xl mx-auto px-6 lg:px-8">
-          <div class="border border-accent/40 bg-cream-mid p-8 md:p-10">
-          <h3 class="font-serif text-2xl md:text-3xl font-light text-espresso">
-            ¿Querés profundizar en esto con tu equipo?
-          </h3>
-          <a
-            href="/#contacto"
-            class="mt-6 inline-flex items-center border border-accent px-6 py-3 font-sans text-sm font-light text-accent hover:bg-accent hover:text-bg transition-colors duration-300"
-          >
-            Hablemos
-          </a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <Footer />
