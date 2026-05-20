@@ -47,7 +47,7 @@ export default function NewsletterForm() {
   };
 
   const inputClass =
-    'w-full bg-cream border rounded-sm font-sans font-light text-espresso text-sm px-4 py-3 outline-none focus:border-accent transition-colors duration-200 placeholder:text-[rgba(33,12,4,0.40)]';
+    'w-full bg-cream border rounded-sm font-sans font-light text-espresso text-sm px-4 py-3 outline-none focus:border-accent transition-colors duration-200 placeholder:text-[rgba(33,12,4,0.60)]';
 
   if (submitted) {
     return (

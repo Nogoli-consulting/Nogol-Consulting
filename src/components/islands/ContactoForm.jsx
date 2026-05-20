@@ -56,7 +56,7 @@ export default function ContactoForm() {
   };
 
   const inputClass =
-    'w-full bg-cream-mid border rounded-sm font-sans font-light text-espresso text-sm px-4 py-3 outline-none focus:border-accent transition-colors duration-200 placeholder:text-[rgba(33,12,4,0.40)]';
+    'w-full bg-cream-mid border rounded-sm font-sans font-light text-espresso text-sm px-4 py-3 outline-none focus:border-accent transition-colors duration-200 placeholder:text-[rgba(33,12,4,0.60)]';
 
   const inputStyle = { border: '1px solid rgba(211,153,69,0.35)' };
 
@@ -141,7 +141,7 @@ export default function ContactoForm() {
           value={form.servicio}
           onChange={handleChange}
           className={`${inputClass} appearance-none cursor-pointer`}
-          style={{...inputStyle, color: form.servicio ? 'var(--espresso)' : 'rgba(33,12,4,0.40)'}}
+          style={{...inputStyle, color: form.servicio ? 'var(--espresso)' : 'rgba(33,12,4,0.60)'}}
         >
           <option value="" disabled>
             ¿Qué necesitás? *
