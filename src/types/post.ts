@@ -6,5 +6,6 @@ export interface Post {
   excerpt: string;
   readTime: number;
   imageUrl?: string;
-  body?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  body?: any[] | string;
 }

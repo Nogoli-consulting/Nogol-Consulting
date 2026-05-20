@@ -15,6 +15,11 @@ export default function NavbarScroll({ logoSrc }) {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentPath, setCurrentPath] = useState('/');
+
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -126,8 +131,9 @@ export default function NavbarScroll({ logoSrc }) {
         {/* ── Desktop nav ── */}
         <ul className="hidden md:flex items-center gap-8">
           {NAV_ITEMS.map((item) => {
-            const id = item.href.replace('#', '');
-            const isActive = activeSection === id;
+            const isActive = item.href.startsWith('/')
+              ? currentPath === item.href || currentPath.startsWith(item.href + '/')
+              : currentPath === '/' && activeSection === item.href.replace('#', '');
             return (
               <li key={item.href}>
                 <a
@@ -207,8 +213,9 @@ export default function NavbarScroll({ logoSrc }) {
         <div className="bg-cream px-6 py-6">
           <ul className="flex flex-col gap-5">
             {NAV_ITEMS.map((item) => {
-              const id = item.href.replace('#', '');
-              const isActive = activeSection === id;
+              const isActive = item.href.startsWith('/')
+                ? currentPath === item.href || currentPath.startsWith(item.href + '/')
+                : currentPath === '/' && activeSection === item.href.replace('#', '');
               return (
                 <li key={item.href}>
                   <a

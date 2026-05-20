@@ -30,6 +30,17 @@ export const POST_BY_SLUG_QUERY = `
     excerpt,
     readTime,
     "imageUrl": mainImage.asset->url,
-    body
+    body[] {
+      ...,
+      _type,
+      children[] {
+        ...,
+        _type,
+        marks,
+        text
+      },
+      markDefs,
+      style
+    }
   }
 `;

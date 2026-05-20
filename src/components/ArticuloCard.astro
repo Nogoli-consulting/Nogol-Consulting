@@ -34,17 +34,14 @@ const patternId = `art-pattern-${post.slug.replace(/[^a-zA-Z0-9-]/g, '')}-${feat
   data-category={post.category}
   data-post-index={cardIndex}
   class:list={[
-    'group flex flex-col overflow-hidden bg-warm-white transition-all duration-300 hover:shadow-md hover:-translate-y-0.5',
+    'group flex flex-col overflow-hidden bg-warm-white transition-transform duration-300 hover:-translate-y-1',
     featured ? 'h-full' : '',
     hidden ? 'hidden' : '',
     className,
   ]}
   style="border: 1px solid rgba(211,153,69,0.25);"
 >
-  <div class:list={[
-    'relative overflow-hidden bg-bg3',
-    featured ? 'h-56 md:h-72' : 'h-44',
-  ]}>
+  <div class="relative overflow-hidden bg-bg3 w-full aspect-video">
     {post.imageUrl ? (
       <img
         src={post.imageUrl}
@@ -54,7 +51,7 @@ const patternId = `art-pattern-${post.slug.replace(/[^a-zA-Z0-9-]/g, '')}-${feat
       />
     ) : (
       <div
-        class:list={['articulo-img-placeholder w-full', featured ? 'h-56 md:h-72' : 'h-44']}
+        class="articulo-img-placeholder w-full h-full"
         style="
           background-color: var(--cream-mid);
           background-image:
@@ -100,3 +97,9 @@ const patternId = `art-pattern-${post.slug.replace(/[^a-zA-Z0-9-]/g, '')}-${feat
     </span>
   </div>
 </a>
+
+<style>
+  [data-post-card]:hover {
+    box-shadow: 0 8px 24px rgba(33,12,4,0.10);
+  }
+</style>

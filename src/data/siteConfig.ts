@@ -14,6 +14,6 @@ export const siteConfig = {
   instagram: "",
   developer: {
     name: "DevCraft",
-    url: "https://devcraftpablo.online/",
+    url: "https://www.devcraft.com.ar/",
   },
 };
