@@ -5,7 +5,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://demo-consultor-empresarial.vercel.app',
+  site: 'https://nogol-consulting.vercel.app',
   output: 'static',
   vite: {
     plugins: [tailwindcss()],
