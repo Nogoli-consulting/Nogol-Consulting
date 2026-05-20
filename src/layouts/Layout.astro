@@ -18,7 +18,7 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://nogoliconsulting.com');
-const ogImageAbsolute = new URL(ogImage, canonicalURL.origin).href;
+const ogImageAbsolute = new URL(ogImage, canonicalURL.origin).href + '?v=2';
 
 const isHome = Astro.url.pathname === '/';
 const personSchema = {
