@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+const WEB3FORMS_KEY = 'a4502128-d1d6-4138-b003-1c37c93d60ea';
+
 const OPCIONES = [
   'Diagnóstico de claridad operativa',
   'Liberación del tiempo del dueño',
@@ -19,7 +21,6 @@ export default function ContactoForm() {
   });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const validate = () => {
@@ -49,30 +50,28 @@ export default function ContactoForm() {
       return;
     }
     setLoading(true);
-    setSubmitError('');
-    setSubmitted(false);
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          access_key: import.meta.env.PUBLIC_WEB3FORMS_KEY,
-          name: form.nombre,
+          access_key: WEB3FORMS_KEY,
+          subject: 'Nueva consulta — Nogolí Consulting',
+          from_name: form.nombre,
           email: form.email,
-          subject: 'Nuevo mensaje desde Nogolí Consulting',
-          message: `Empresa: ${form.empresa}\nServicio: ${form.servicio}\n\n${form.mensaje}`,
-          from_name: 'Nogolí Consulting Web',
+          empresa: form.empresa,
+          servicio: form.servicio,
+          mensaje: form.mensaje,
         }),
       });
-      const result = await res.json();
-      if (result.success) {
+      const data = await res.json();
+      if (data.success) {
         setSubmitted(true);
-        setForm({ nombre: '', empresa: '', email: '', servicio: '', mensaje: '' });
       } else {
-        setSubmitError('Hubo un error al enviar. Intentá de nuevo.');
+        setErrors({ submit: 'Hubo un problema. Intentá de nuevo.' });
       }
     } catch {
-      setSubmitError('Hubo un error al enviar. Intentá de nuevo.');
+      setErrors({ submit: 'Error de conexión. Intentá de nuevo.' });
     } finally {
       setLoading(false);
     }
@@ -163,6 +162,7 @@ export default function ContactoForm() {
         {errors.mensaje && <p className={errorClass}>{errors.mensaje}</p>}
       </div>
 
+      {errors.submit && <p className={errorClass}>{errors.submit}</p>}
       <button
         type="submit"
         disabled={loading}
@@ -190,11 +190,6 @@ export default function ContactoForm() {
       {submitted && (
         <p className="font-sans text-sm" style={{ color: '#D39945' }}>
           ¡Mensaje enviado! Te contactamos a la brevedad.
-        </p>
-      )}
-      {submitError && (
-        <p className="font-sans text-sm" style={{ color: 'red' }}>
-          {submitError}
         </p>
       )}
     </form>

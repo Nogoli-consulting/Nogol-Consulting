@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-// TODO: replace with real Web3Forms API key from client (reuse same key as ContactoForm)
-const WEB3FORMS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+const WEB3FORMS_KEY = 'a4502128-d1d6-4138-b003-1c37c93d60ea';
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState('');
