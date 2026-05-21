@@ -19,6 +19,7 @@ export default function ContactoForm() {
   });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const validate = () => {
@@ -40,7 +41,7 @@ export default function ContactoForm() {
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: '' }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) {
@@ -48,11 +49,33 @@ export default function ContactoForm() {
       return;
     }
     setLoading(true);
-    // Simulate send (no real endpoint yet)
-    setTimeout(() => {
+    setSubmitError('');
+    setSubmitted(false);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: import.meta.env.PUBLIC_WEB3FORMS_KEY,
+          name: form.nombre,
+          email: form.email,
+          subject: 'Nuevo mensaje desde Nogolí Consulting',
+          message: `Empresa: ${form.empresa}\nServicio: ${form.servicio}\n\n${form.mensaje}`,
+          from_name: 'Nogolí Consulting Web',
+        }),
+      });
+      const result = await res.json();
+      if (result.success) {
+        setSubmitted(true);
+        setForm({ nombre: '', empresa: '', email: '', servicio: '', mensaje: '' });
+      } else {
+        setSubmitError('Hubo un error al enviar. Intentá de nuevo.');
+      }
+    } catch {
+      setSubmitError('Hubo un error al enviar. Intentá de nuevo.');
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-    }, 1000);
+    }
   };
 
   const inputClass =
@@ -62,37 +85,10 @@ export default function ContactoForm() {
 
   const errorClass = 'text-red-400 text-xs mt-1 font-sans';
 
-  if (submitted) {
-    return (
-      <div className="flex flex-col items-start gap-4 py-12">
-        <div className="w-12 h-12 border border-accent flex items-center justify-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-accent"
-          >
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-        </div>
-        <h3 className="font-serif text-2xl font-light text-espresso">
-          Mensaje enviado.
-        </h3>
-        <p className="font-sans text-sm font-light" style={{color: 'var(--dark-mid)'}}>
-          Gracias por escribirme. Voy a revisar tu situación y te contacto en las próximas 24–48 horas.
-        </p>
-      </div>
-    );
-  }
-
   return (
     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
+      {/* Honeypot anti-spam */}
+      <input type="checkbox" name="botcheck" style={{display: 'none'}} />
       {/* Nombre + Empresa */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
@@ -190,6 +186,17 @@ export default function ContactoForm() {
           </svg>
         )}
       </button>
+
+      {submitted && (
+        <p className="font-sans text-sm" style={{ color: '#D39945' }}>
+          ¡Mensaje enviado! Te contactamos a la brevedad.
+        </p>
+      )}
+      {submitError && (
+        <p className="font-sans text-sm" style={{ color: 'red' }}>
+          {submitError}
+        </p>
+      )}
     </form>
   );
 }
