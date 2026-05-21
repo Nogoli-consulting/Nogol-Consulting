@@ -120,7 +120,7 @@ export default function NavbarScroll({ logoSrc }) {
               Nogolí
             </span>
             <span
-              className="font-sans text-dark-mid font-light whitespace-nowrap"
+              className="font-sans text-dark-mid font-normal whitespace-nowrap"
               style={{ fontSize: '11px', letterSpacing: '0.24em', textTransform: 'uppercase', marginTop: '3px' }}
             >
               Consulting

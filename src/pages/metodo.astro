@@ -115,7 +115,7 @@ const diferenciales = [
           <h1 class="reveal reveal-delay-1 font-serif text-espresso mb-8" style="font-size: clamp(48px, 7vw, 84px); line-height: 1.05; letter-spacing: -0.02em; font-weight: 900;">
             El Método Nogolí.
           </h1>
-          <p class="reveal reveal-delay-2 font-sans text-base md:text-xl font-light leading-loose max-w-2xl" style="color: var(--dark-mid);">
+          <p class="reveal reveal-delay-2 font-sans text-base md:text-xl font-normal leading-loose max-w-2xl" style="color: var(--dark-mid);">
             Una forma de trabajo usable, conectada y viva, diseñada para que tu
             operación no dependa siempre de vos. Cuatro pilares que actúan juntos
             para transformar el desorden en capacidad real de entrega.
@@ -183,7 +183,7 @@ const diferenciales = [
                 {pilar.titulo}
               </h2>
               {pilar.descripcion.split('\n\n').map((para) => (
-                <p class="font-sans text-base font-light leading-loose mb-4" style="color: var(--dark-mid);">
+                <p class="font-sans text-base font-normal leading-loose mb-4" style="color: var(--dark-mid);">
                   {para}
                 </p>
               ))}
@@ -192,7 +192,7 @@ const diferenciales = [
               {pilar.items.map((item) => (
                 <div class="flex items-start gap-4 p-5 bg-cream hover:bg-warm-white transition-colors duration-300" style="border: 1px solid rgba(211,153,69,0.22);">
                   <span class="mt-1 w-2 h-2 rounded-full bg-accent shrink-0"></span>
-                  <span class="font-sans text-sm font-light text-espresso leading-snug">{item}</span>
+                  <span class="font-sans text-sm font-normal text-espresso leading-snug">{item}</span>
                 </div>
               ))}
             </div>
@@ -242,7 +242,7 @@ const diferenciales = [
               </div>
               <div class="flex flex-col gap-3">
                 <h3 class="font-serif text-espresso font-semibold" style="font-size: clamp(20px, 2.5vw, 28px); line-height: 1.2;">{s.titulo}</h3>
-                <p class="font-sans text-base font-light leading-loose max-w-2xl" style="color: var(--dark-mid);">{s.descripcion}</p>
+                <p class="font-sans text-base font-normal leading-loose max-w-2xl" style="color: var(--dark-mid);">{s.descripcion}</p>
               </div>
             </div>
           ))}
@@ -265,7 +265,7 @@ const diferenciales = [
             <div class={`reveal reveal-delay-${i + 1} bg-cream hover:bg-warm-white transition-colors duration-300 p-8 lg:p-10 flex flex-col gap-4`}>
               <div class="w-8 h-px bg-accent mb-2"></div>
               <h3 class="font-serif text-xl font-bold text-espresso">{d.titulo}</h3>
-              <p class="font-sans text-sm font-light leading-loose" style="color: var(--dark-mid);">{d.descripcion}</p>
+              <p class="font-sans text-sm font-normal leading-loose" style="color: var(--dark-mid);">{d.descripcion}</p>
             </div>
           ))}
         </div>
@@ -279,7 +279,7 @@ const diferenciales = [
         <h2 class="reveal reveal-delay-1 font-serif text-text max-w-2xl" style="font-size: clamp(32px, 4vw, 52px); line-height: 1.2; letter-spacing: -0.01em;">
           Hablemos sobre tu empresa.
         </h2>
-        <p class="reveal reveal-delay-2 font-sans text-base font-light text-muted max-w-xl leading-loose">
+        <p class="reveal reveal-delay-2 font-sans text-base font-normal text-muted max-w-xl leading-loose">
           Te propongo una charla corta. Revisamos tu situación y te digo si el
           Método Nogolí aplica y por dónde empezar.
         </p>

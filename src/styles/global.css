@@ -20,7 +20,7 @@
   --color-text:       #FAF3E4;
   --color-muted:      rgba(250,243,228,0.70);
   --color-espresso:   #210c04;
-  --color-dark-mid:   #635757;
+  --color-dark-mid:   #3D2B2B;
   --color-line:       rgba(211,153,69,0.22);
 
   --font-serif: 'Playfair Display', Georgia, serif;
@@ -40,7 +40,7 @@
   --gold-pale: #F0DFB8;
   --text:      #FAF3E4;
   --espresso:  #210c04;
-  --dark-mid:  #635757;
+  --dark-mid:  #3D2B2B;
   --muted:     rgba(250,243,228,0.70);
   --line:      rgba(211,153,69,0.22);
   --serif:     'Playfair Display', Georgia, serif;
@@ -64,7 +64,8 @@
     background-color: var(--cream);
     color: var(--espresso);
     font-family: var(--font-sans);
-    font-weight: 300;
+    font-size: 17px;
+    font-weight: 400;
     line-height: 1.8;
   }
 
@@ -106,7 +107,7 @@
     font-size: 1.0625rem;
     line-height: 1.85;
     font-weight: 400;
-    color: rgba(33,12,4,0.90);
+    color: #0D0D0D;
     margin-bottom: 1.5rem;
   }
   .prose-nogoli h2 {

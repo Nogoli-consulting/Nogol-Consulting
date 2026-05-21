@@ -75,7 +75,7 @@ const patternId = `art-pattern-${post.slug.replace(/[^a-zA-Z0-9-]/g, '')}-${feat
     'flex flex-1 flex-col gap-3',
     featured ? 'p-8' : 'p-6',
   ]}>
-    <div class="flex items-center gap-2 font-sans text-xs font-light" style="color: var(--dark-mid); opacity: 0.8;">
+    <div class="flex items-center gap-2 font-sans text-xs font-normal" style="color: var(--dark-mid); opacity: 0.8;">
       <time>{formatDate(post.date)}</time>
       <span>·</span>
       <span>{post.readTime} min de lectura</span>
@@ -88,7 +88,7 @@ const patternId = `art-pattern-${post.slug.replace(/[^a-zA-Z0-9-]/g, '')}-${feat
       {post.title}
     </h2>
 
-    <p class="line-clamp-3 flex-1 font-sans text-sm font-light leading-relaxed" style="color: var(--dark-mid);">
+    <p class="line-clamp-3 flex-1 font-sans text-sm font-normal leading-relaxed" style="color: var(--dark-mid);">
       {post.excerpt}
     </p>
 
