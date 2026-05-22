@@ -17,7 +17,7 @@ const {
   noIndex = false,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://nogoliconsulting.com');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://nogoli-consulting.com');
 const ogImageAbsolute = new URL(ogImage, canonicalURL.origin).href + '?v=2';
 
 const isHome = Astro.url.pathname === '/';
@@ -29,9 +29,9 @@ const personSchema = {
   "worksFor": {
     "@type": "Organization",
     "name": "Nogolí Consulting",
-    "url": "https://nogoliconsulting.com"
+    "url": "https://nogoli-consulting.com"
   },
-  "url": "https://nogoliconsulting.com",
+  "url": "https://nogoli-consulting.com",
   "sameAs": [
     "https://linkedin.com/in/sergio-martin-celuch",
     "https://linkedin.com/company/nogoli-consulting"

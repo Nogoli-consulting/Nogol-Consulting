@@ -16,7 +16,7 @@ const {
   noIndex = false,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://nogoliconsulting.com');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://nogoli-consulting.com');
 const ogImageAbsolute = new URL(ogImage, canonicalURL.origin).href;
 ---
 
