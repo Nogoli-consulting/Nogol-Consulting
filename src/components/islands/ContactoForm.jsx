@@ -166,7 +166,7 @@ export default function ContactoForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full flex items-center justify-center gap-3 px-8 py-3 bg-gold-dark text-cream font-sans text-sm font-bold tracking-[0.1em] rounded-sm hover:bg-accent transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full flex items-center justify-center gap-3 px-8 py-3 bg-gold-dark text-cream font-sans text-sm font-bold tracking-widest rounded-sm hover:bg-accent transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {loading ? 'Enviando...' : 'Enviar mensaje'}
         {!loading && (
