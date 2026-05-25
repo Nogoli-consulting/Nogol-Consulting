@@ -9,7 +9,18 @@ const NAV_ITEMS = [
   { label: 'Artículos', href: '/articulos' },
 ];
 
-const SECTION_IDS = ['inicio', 'metodo', 'servicios', 'sobre', 'contacto', 'articulos', 'herramienta'];
+const SECTION_IDS = [
+  'inicio',
+  'desafio',
+  'metodo',
+  'servicios',
+  'herramienta',
+  'testimonios',
+  'sobre',
+  'resultados',
+  'articulos',
+  'contacto',
+];
 
 export default function NavbarScroll({ logoSrc }) {
   const [scrolled, setScrolled] = useState(false);
@@ -22,23 +33,46 @@ export default function NavbarScroll({ logoSrc }) {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-
-      // Scroll spy
-      let current = 'inicio';
-      for (const id of SECTION_IDS) {
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 100) current = id;
-        }
-      }
-      setActiveSection(current);
-    };
-
+    // Scroll handler for navbar background
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // IntersectionObserver for active section detection
+    const visibilityMap = {};
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          visibilityMap[entry.target.id] = entry.intersectionRatio;
+        });
+
+        // Pick the section with the highest visibility ratio,
+        // respecting the page order as a tiebreaker
+        let bestId = 'inicio';
+        let bestRatio = 0;
+        for (const id of SECTION_IDS) {
+          const ratio = visibilityMap[id] ?? 0;
+          if (ratio > bestRatio) {
+            bestRatio = ratio;
+            bestId = id;
+          }
+        }
+        if (bestRatio > 0) setActiveSection(bestId);
+      },
+      {
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5],
+      }
+    );
+
+    SECTION_IDS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const handleNav = (e, href) => {
