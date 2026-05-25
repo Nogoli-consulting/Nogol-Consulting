@@ -4,7 +4,7 @@ const NAV_ITEMS = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Método', href: '#metodo' },
   { label: 'Servicios', href: '#servicios' },
-  { label: 'Sobre mí', href: '#sobre' },
+  { label: 'Nosotros', href: '#sobre' },
   { label: 'Contacto', href: '#contacto' },
   { label: 'Artículos', href: '/articulos' },
 ];
@@ -151,6 +151,16 @@ export default function NavbarScroll({ logoSrc }) {
               </li>
             );
           })}
+          <li>
+            <a
+              href="https://matriz-tiempo-impacto.lovable.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-sm font-normal tracking-wide transition-all duration-200 relative pb-0.5 after:absolute after:bottom-0 after:left-0 after:h-px after:bg-gold-dark after:transition-all after:duration-300 text-dark-mid hover:text-espresso after:w-0 hover:after:w-full"
+            >
+              Herramienta
+            </a>
+          </li>
         </ul>
 
         {/* ── CTA Button ── */}
@@ -230,6 +240,16 @@ export default function NavbarScroll({ logoSrc }) {
                 </li>
               );
             })}
+            <li>
+              <a
+                href="https://matriz-tiempo-impacto.lovable.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-sans text-base font-normal transition-colors text-dark-mid hover:text-espresso"
+              >
+                Herramienta
+              </a>
+            </li>
             <li className="pt-2" style={{ borderTop: '1px solid rgba(211,153,69,0.18)' }}>
               <a
                 href="https://wa.me/5491130855891?text=Hola%20Sergio%2C%20te%20contacto%20desde%20tu%20web.%20Me%20gustar%C3%ADa%20agendar%20una%20charla%20para%20ver%20c%C3%B3mo%20pod%C3%A9s%20ayudarme%20a%20ordenar%20la%20operaci%C3%B3n%20de%20mi%20empresa."
