@@ -203,7 +203,9 @@ const personSchema = {
         }
       });
     </script>
-    <link rel="preload" as="image" href="/imagenes/perfil/sergio6.webp" fetchpriority="high" />
+    {isHome && (
+      <link rel="preload" as="image" href="/imagenes/perfil/sergio6.webp" fetchpriority="high" />
+    )}
     {isHome && (
       <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     )}

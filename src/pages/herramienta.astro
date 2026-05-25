@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/layout/Navbar.astro';
+---
+
+<Layout
+  title="Herramienta · Matriz Tiempo–Impacto | Nogolí Consulting"
+  description="Mapeá en 30 minutos qué debe seguir en dirección y qué puede empezar a salir de la operación. Herramienta gratuita de Nogolí Consulting."
+>
+  <Navbar />
+
+  <iframe
+    src="https://matriz-tiempo-impacto.lovable.app"
+    scrolling="yes"
+    allow="fullscreen"
+    style="width:100%; height:100vh; border:none; display:block;"
+    title="Matriz Tiempo–Impacto — Nogolí Consulting"
+  ></iframe>
+
+</Layout>
+
+<style>
+  header {
+    display: none !important;
+  }
+
+  html, body { overflow: hidden; }
+</style>

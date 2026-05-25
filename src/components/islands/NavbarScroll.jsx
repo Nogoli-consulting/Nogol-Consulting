@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   { label: 'Artículos', href: '/articulos' },
 ];
 
-const SECTION_IDS = ['inicio', 'metodo', 'servicios', 'sobre', 'contacto', 'articulos'];
+const SECTION_IDS = ['inicio', 'metodo', 'servicios', 'sobre', 'contacto', 'articulos', 'herramienta'];
 
 export default function NavbarScroll({ logoSrc }) {
   const [scrolled, setScrolled] = useState(false);
@@ -153,10 +153,13 @@ export default function NavbarScroll({ logoSrc }) {
           })}
           <li>
             <a
-              href="https://matriz-tiempo-impacto.lovable.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-sans text-sm font-normal tracking-wide transition-all duration-200 relative pb-0.5 after:absolute after:bottom-0 after:left-0 after:h-px after:bg-gold-dark after:transition-all after:duration-300 text-dark-mid hover:text-espresso after:w-0 hover:after:w-full"
+              href="#herramienta"
+              onClick={(e) => handleNav(e, '#herramienta')}
+              className={`font-sans text-sm font-normal tracking-wide transition-all duration-200 relative pb-0.5 after:absolute after:bottom-0 after:left-0 after:h-px after:bg-gold-dark after:transition-all after:duration-300 ${
+                currentPath === '/' && activeSection === 'herramienta'
+                  ? 'text-gold-dark after:w-full'
+                  : 'text-dark-mid hover:text-espresso after:w-0 hover:after:w-full'
+              }`}
             >
               Herramienta
             </a>
@@ -242,10 +245,11 @@ export default function NavbarScroll({ logoSrc }) {
             })}
             <li>
               <a
-                href="https://matriz-tiempo-impacto.lovable.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-sans text-base font-normal transition-colors text-dark-mid hover:text-espresso"
+                href="#herramienta"
+                onClick={(e) => handleNav(e, '#herramienta')}
+                className={`font-sans text-base font-normal transition-colors ${
+                  currentPath === '/' && activeSection === 'herramienta' ? 'text-gold-dark' : 'text-dark-mid hover:text-espresso'
+                }`}
               >
                 Herramienta
               </a>
