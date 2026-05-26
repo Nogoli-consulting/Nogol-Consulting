@@ -195,7 +195,7 @@ export default function NavbarScroll({ logoSrc }) {
                   : 'text-dark-mid hover:text-espresso after:w-0 hover:after:w-full'
               }`}
             >
-              Herramienta
+              Herramientas
             </a>
           </li>
         </ul>
@@ -285,7 +285,7 @@ export default function NavbarScroll({ logoSrc }) {
                   currentPath === '/' && activeSection === 'herramienta' ? 'text-gold-dark' : 'text-dark-mid hover:text-espresso'
                 }`}
               >
-                Herramienta
+                Herramientas
               </a>
             </li>
             <li className="pt-2" style={{ borderTop: '1px solid rgba(211,153,69,0.18)' }}>
